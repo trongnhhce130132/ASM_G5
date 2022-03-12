@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "024839dc-efa9-4701-90c0-f64cf71c835d": {
+      "ProjectGuid": "024839dc-efa9-4701-90c0-f64cf71c835d",
+      "DisplayName": "ASMLibrary",
+      "ColorIndex": 0
+    },
+    "76526f06-32fd-45f5-be3b-1d59afd79e9e": {
+      "ProjectGuid": "76526f06-32fd-45f5-be3b-1d59afd79e9e",
+      "DisplayName": "ASMWPF",
+      "ColorIndex": 1
+    },
+    "b609ff25-3139-4d5b-acef-e60be4920738": {
+      "ProjectGuid": "b609ff25-3139-4d5b-acef-e60be4920738",
+      "DisplayName": "ASMWPF",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

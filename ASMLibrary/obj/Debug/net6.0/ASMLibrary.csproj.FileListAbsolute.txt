@@ -1,0 +1,14 @@
+E:\ASM_G5\ASMLibrary\bin\Debug\net6.0\ASMLibrary.deps.json
+E:\ASM_G5\ASMLibrary\bin\Debug\net6.0\ASMLibrary.runtimeconfig.json
+E:\ASM_G5\ASMLibrary\bin\Debug\net6.0\ASMLibrary.dll
+E:\ASM_G5\ASMLibrary\bin\Debug\net6.0\ref\ASMLibrary.dll
+E:\ASM_G5\ASMLibrary\bin\Debug\net6.0\ASMLibrary.pdb
+E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.csproj.AssemblyReference.cache
+E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.GeneratedMSBuildEditorConfig.editorconfig
+E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.AssemblyInfoInputs.cache
+E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.AssemblyInfo.cs
+E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.csproj.CoreCompileInputs.cache
+E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.dll
+E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ref\ASMLibrary.dll
+E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.pdb
+E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.genruntimeconfig.cache
