@@ -12,3 +12,17 @@ E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.dll
 E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ref\ASMLibrary.dll
 E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.pdb
 E:\ASM_G5\ASMLibrary\obj\Debug\net6.0\ASMLibrary.genruntimeconfig.cache
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\obj\Debug\net6.0\ASMLibrary.csproj.AssemblyReference.cache
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\obj\Debug\net6.0\ASMLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\obj\Debug\net6.0\ASMLibrary.AssemblyInfoInputs.cache
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\obj\Debug\net6.0\ASMLibrary.AssemblyInfo.cs
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\obj\Debug\net6.0\ASMLibrary.csproj.CoreCompileInputs.cache
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\obj\Debug\net6.0\ASMLibrary.dll
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\obj\Debug\net6.0\ref\ASMLibrary.dll
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\obj\Debug\net6.0\ASMLibrary.pdb
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\bin\Debug\net6.0\ASMLibrary.deps.json
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\bin\Debug\net6.0\ASMLibrary.runtimeconfig.json
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\bin\Debug\net6.0\ASMLibrary.dll
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\bin\Debug\net6.0\ref\ASMLibrary.dll
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\bin\Debug\net6.0\ASMLibrary.pdb
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMLibrary\obj\Debug\net6.0\ASMLibrary.genruntimeconfig.cache

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\ASM_G5\ASMWPF\obj\Debug\net6.0-windows\
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMWPF\obj\Debug\net6.0-windows\
 ASMWPF
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-E:\ASM_G5\ASMWPF\App.xaml
-3-1401624546
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\PRN221_ASM\ASMWPF\App.xaml
+5853892910
 
-7-1817721013
-22190042313
-LoaiForm.xaml;MainWindow.xaml;MonAnForm.xaml;
+9943223849
+2211683399688
+LoaiForm.xaml;LoginForm.xaml;MainWindow.xaml;MonAnForm.xaml;RegisterForm.xaml;
 
-True
+False
 
