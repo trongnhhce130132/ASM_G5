@@ -26,6 +26,7 @@ namespace ASMLibrary.DAO
             }
             return khachHangs;
         }
+
         public String GetIDCuoi()
         {
             List<KhachHang> khachHangs;
@@ -75,6 +76,20 @@ namespace ASMLibrary.DAO
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+            return khachHang;
+        }
+        public KhachHang CheckLogin(string username, string password)
+        {
+            KhachHang khachHang = null;
+            try
+            {
+                var ASMFDB = new ASMFContext();
+                khachHang = ASMFDB.KhachHangs.SingleOrDefault(m => m.Username.Equals(username) && m.Password.Equals(password));
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
             return khachHang;
         }

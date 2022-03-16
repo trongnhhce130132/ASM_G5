@@ -13,8 +13,11 @@ namespace ASMLibrary.Management.IService
         String GetIDCuoi();
         IEnumerable<KhachHang> SearchKhachHangByName(String Name);
         KhachHang GetKhachHangByID(String id);
+        KhachHang CheckLogin(string username, string password);
         void AddKhachHang(KhachHang khachHang);
         void UpdateKhachHang(KhachHang khachHang);
         void DeleteKhachHang(KhachHang khachHang);
+
+
     }
 }

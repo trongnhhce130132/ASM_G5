@@ -1,4 +1,6 @@
-﻿using ASMLibrary.Management.IService;
+﻿using ASMLibrary.DataAccess;
+using ASMLibrary.Management.IService;
+using ASMLibrary.Management.Sevice;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,19 +22,20 @@ namespace ASMWPF
     /// </summary>
     public partial class MonAnForm : Window
     {
-        IMonAnService monAnService;
-        public MonAnForm(IMonAnService monAn)
+        MonAnService monAnService;
+        public KhachHang khach;
+        public MonAnForm()
         {
             InitializeComponent();
-            monAnService = monAn;
+       //     monAnService = monAn;
         }
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
             // lv.ItemsSource = monAnService.GetMonAns();
-            Uri fileUri = new Uri(monAnService.GetMonAns().FirstOrDefault(a => a.Idmon.Equals("M0001")).Hinh);
-            img.Source = new BitmapImage(fileUri);
-            txt.Text = monAnService.GetIDCuoi();
+          //  Uri fileUri = new Uri(monAnService.GetMonAns().FirstOrDefault(a => a.Idmon.Equals("M0001")).Hinh);
+       //     img.Source = new BitmapImage(fileUri);
+            txt.Text = khach.HotenKh;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

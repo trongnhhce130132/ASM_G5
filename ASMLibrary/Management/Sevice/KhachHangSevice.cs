@@ -14,6 +14,7 @@ namespace ASMLibrary.Management.Sevice
         KhachHangDAO KhachHang = new KhachHangDAO();
         public IEnumerable<KhachHang> GetKhachHangs() => KhachHang.GetKhachHangList();
         public String GetIDCuoi() => KhachHang.GetIDCuoi();
+        public KhachHang CheckLogin(string username, string password) => KhachHang.CheckLogin(username, password);  
         public IEnumerable<KhachHang> SearchKhachHangByName(String Name) => KhachHang.SearchKhachHangByName(Name);
         public KhachHang GetKhachHangByID(String id) => KhachHang.GetKhachHangByID(id);
         public void AddKhachHang(KhachHang khachHang) => KhachHang.AddKhachHang(khachHang);
