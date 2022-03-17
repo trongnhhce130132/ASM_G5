@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\a\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj": {}
+    "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj": {}
   },
   "projects": {
-    "F:\\a\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj": {
+    "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\a\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj",
+        "projectUniqueName": "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj",
         "projectName": "ASMLibrary",
-        "projectPath": "F:\\a\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj",
+        "projectPath": "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj",
         "packagesPath": "C:\\Users\\TrongAn\\.nuget\\packages\\",
-        "outputPath": "F:\\a\\PRN221_ASM\\ASMLibrary\\obj\\",
+        "outputPath": "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -82,14 +82,14 @@
         }
       }
     },
-    "F:\\a\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj": {
+    "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\a\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj",
+        "projectUniqueName": "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj",
         "projectName": "ASMWPF",
-        "projectPath": "F:\\a\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj",
+        "projectPath": "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj",
         "packagesPath": "C:\\Users\\TrongAn\\.nuget\\packages\\",
-        "outputPath": "F:\\a\\PRN221_ASM\\ASMWPF\\obj\\",
+        "outputPath": "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMWPF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -110,8 +110,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "F:\\a\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj": {
-                "projectPath": "F:\\a\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj"
+              "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj": {
+                "projectPath": "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMLibrary\\ASMLibrary.csproj"
               }
             }
           }

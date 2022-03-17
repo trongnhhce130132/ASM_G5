@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jUjsKgaomMdua2lyRkkTvqnetPHASisHktdK9yHc7o/FN/nyWIjLNRvUaJGCN+meWuawwEmcY1d/NCLGbSx35Q==",
+  "dgSpecHash": "pGcgu1TF9GzkahGeQVoxzhaB8JvkbQrJTm9TJIB0yqMF+9dT70f78cD0irqOSuW4NBnyhKsungs2bERk4ybwQQ==",
   "success": true,
-  "projectFilePath": "F:\\a\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj",
+  "projectFilePath": "F:\\a\\VOV134.4_CE140591_LyHuynhTrongAn_VOV3\\PRN221_ASM\\ASMWPF\\ASMWPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TrongAn\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\TrongAn\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
