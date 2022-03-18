@@ -10,25 +10,11 @@ namespace ASMLibrary.DAO
 {
     public class MonAnDAO
     {
-        private static MonAnDAO instance;
-        private static readonly object instanceLock = new object();
-        private  MonAnDAO() { 
+   
+        public  MonAnDAO() { 
         }
 
-        public static MonAnDAO Instance
-        {
-            get
-            {
-                lock (instanceLock)
-                {
-                    if (instance == null)
-                    {
-                        instance = new MonAnDAO();
-                    }
-                    return instance;
-                }
-            }
-        }
+       
         public IEnumerable<MonAn> GetMonAnList()
         {
             List<MonAn> monAns;
