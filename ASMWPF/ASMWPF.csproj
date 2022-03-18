@@ -9,14 +9,20 @@
 
   <ItemGroup>
     <None Remove="images\arrow.png" />
+    <None Remove="images\delete.png" />
+    <None Remove="images\edit.png" />
     <None Remove="images\fast-food.png" />
     <None Remove="images\home.png" />
+    <None Remove="images\home_gradient.png" />
+    <None Remove="images\info.png" />
     <None Remove="images\logout.png" />
     <None Remove="images\minus.png" />
     <None Remove="images\note.png" />
     <None Remove="images\plus.png" />
     <None Remove="images\shopping-cart.png" />
+    <None Remove="images\shopping-cart_gradient.png" />
     <None Remove="images\user.png" />
+    <None Remove="images\user_gradient.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,14 +35,20 @@
 
   <ItemGroup>
     <Resource Include="images\arrow.png" />
+    <Resource Include="images\delete.png" />
+    <Resource Include="images\edit.png" />
     <Resource Include="images\fast-food.png" />
     <Resource Include="images\home.png" />
+    <Resource Include="images\home_gradient.png" />
+    <Resource Include="images\info.png" />
     <Resource Include="images\logout.png" />
     <Resource Include="images\minus.png" />
     <Resource Include="images\note.png" />
     <Resource Include="images\plus.png" />
     <Resource Include="images\shopping-cart.png" />
+    <Resource Include="images\shopping-cart_gradient.png" />
     <Resource Include="images\user.png" />
+    <Resource Include="images\user_gradient.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -129,7 +129,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("KhachHang does not already exist.");
+                    throw new Exception("KhachHang does not exist.");
                 }
 
             }
@@ -151,7 +151,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("KhachHang does not already exist.");
+                    throw new Exception("KhachHang does not exist.");
                 }
 
             }

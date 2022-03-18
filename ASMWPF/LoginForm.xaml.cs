@@ -33,27 +33,7 @@ namespace ASMWPF
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Password.ToString();
-
-            khachHang = khachHangSevice.CheckLogin(username, password);
-
-            if(khachHang != null)
-            {
-                MessageBox.Show("dung oi");
-                if (khachHang.Role.Equals("User"))
-                {
-                    Menu monAn = new Menu();
-                 //   monAn.khach = khachHang;
-                    monAn.Show();
-                    this.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("sai oi");
-            }
-            
+            Login();   
         }
 
         private void lbRegister_MouseDown(object sender, MouseButtonEventArgs e)
@@ -61,6 +41,59 @@ namespace ASMWPF
             RegisterForm  register = new RegisterForm();
             register.Show();
             this.Close();
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Login();
+            }
+        }
+
+        void Login()
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Password.ToString();
+
+            khachHang = khachHangSevice.CheckLogin(username, password);
+
+            if (khachHang != null)
+            {
+                if (khachHang.Role.Equals("User") && khachHang.Tt.Equals(1))
+                {
+
+                    MonAnForm monAn = new MonAnForm();
+                    monAn.khach = khachHang;
+                    MessageBox.Show("Welcome " + khachHang.HotenKh);
+
+
+                    monAn.Show();
+                    this.Close();
+                }
+
+                if (khachHang.Role.Equals("Admin") && khachHang.Tt.Equals(1))
+                {
+                    AdminHomePageForm admin = new AdminHomePageForm();
+                    admin.admin = khachHang;
+                    MessageBox.Show("Welcome admin: " + khachHang.HotenKh);
+                    admin.Show();
+                    this.Close();
+                }
+
+                if ((khachHang.Role.Equals("User") || khachHang.Role.Equals("Admin")) && khachHang.Tt.Equals(2))
+                {
+                    MessageBox.Show("Sorry but your account has been blocked");
+                }
+            }
+            else if (username.Equals("") || password.Equals(""))
+            {
+                MessageBox.Show("Null kìa");
+            }
+            else if(khachHang == null)
+            {
+                MessageBox.Show("Sai òi nha");
+            }
         }
     }
 }

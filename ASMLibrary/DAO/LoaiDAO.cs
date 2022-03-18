@@ -80,7 +80,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("Loai is already exist.");
+                    throw new Exception("Category is already exist.");
                 }
 
             }
@@ -102,7 +102,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("Loai does not already exist.");
+                    throw new Exception("Category does not exist.");
                 }
 
             }
@@ -124,7 +124,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("Loai does not already exist.");
+                    throw new Exception("Category does not exist.");
                 }
 
             }

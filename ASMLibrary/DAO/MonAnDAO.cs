@@ -95,7 +95,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("MonAn is already exist.");
+                    throw new Exception("Food is already exist.");
                 }
 
             }
@@ -117,7 +117,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("MonAn does not already exist.");
+                    throw new Exception("Food does not exist.");
                 }
 
             }
@@ -139,7 +139,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("MonAn does not already exist.");
+                    throw new Exception("Food does not exist.");
                 }
 
             }

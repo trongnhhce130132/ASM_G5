@@ -93,7 +93,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("ChiTietDonHang is already exist.");
+                    throw new Exception("Order detail does not exist.");
                 }
 
             }
@@ -115,7 +115,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("ChiTietDonHang does not already exist.");
+                    throw new Exception("Order detail does not exist.");
                 }
 
             }
@@ -137,7 +137,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("ChiTietDonHang does not already exist.");
+                    throw new Exception("Order detail does not exist.");
                 }
 
             }

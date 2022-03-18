@@ -4,13 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASMWPF"
-        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
-        Title="RegisterForm" Height="414" Width="356" ResizeMode="NoResize">
+        mc:Ignorable="d" 
+        Title="RegisterForm" Height="414" Width="356" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid Background="Black">
         <Label Content="Username" HorizontalAlignment="Left" Margin="60,43,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" FontSize="20" FontFamily="Perpetua"/>
         <TextBox x:Name="txtUsername" Margin="157,47,49,0" TextWrapping="Wrap" Text="" Height="24" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="60,77,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" FontSize="20" FontFamily="Perpetua"/>
-        <PasswordBox x:Name="txtPassword" Margin="157,85,49,0" Height="24" VerticalAlignment="Top" FontSize="16"/>
+        <PasswordBox x:Name="txtPassword" Margin="157,81,49,0" Height="24" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Confirm" HorizontalAlignment="Left" Margin="59,110,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" FontSize="20" FontFamily="Perpetua"/>
+        <PasswordBox x:Name="txtConfirmPass" Margin="157,115,49,0" Height="24" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Fullname" HorizontalAlignment="Left" Margin="60,146,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" FontSize="20" FontFamily="Perpetua"/>
         <TextBox x:Name="txtFullname" Margin="157,150,49,0" TextWrapping="Wrap" Text="" Height="24" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="60,184,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" FontSize="20" FontFamily="Perpetua"/>
@@ -20,9 +23,7 @@
         <Label Content="Address" HorizontalAlignment="Left" Margin="60,260,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" FontSize="20" FontFamily="Perpetua"/>
         <TextBox x:Name="txtAddress" Margin="157,264,49,0" TextWrapping="Wrap" Text="" Height="24" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="lbRegisterNotify" Content="" HorizontalAlignment="Left" Margin="82,299,0,41" Width="214" Foreground="Red" FontSize="16"/>
-        <Button  x:Name="btnback" Content="Back" HorizontalAlignment="Left" Margin="88,0,0,11" Width="80" Height="25" VerticalAlignment="Bottom" FontSize="16"/>
+        <Button x:Name="btnback" Content="Back" HorizontalAlignment="Left" Margin="88,0,0,11" Width="80" Height="25" VerticalAlignment="Bottom" FontSize="16" Click="btnBackLogin_Click"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="208,0,0,11" Width="80" Height="25" VerticalAlignment="Bottom" FontSize="16" Click="btnRegister_Click"/>
-        <Label Content="Confirm" HorizontalAlignment="Left" Margin="59,110,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" FontSize="20" FontFamily="Perpetua"/>
-        <PasswordBox x:Name="txtConfirmPass" Margin="157,115,49,0" Height="24" VerticalAlignment="Top" FontSize="16"/>
-    </Grid>
+        </Grid>
 </Window>
