@@ -24,6 +24,7 @@ namespace ASMWPF
     {
         KhachHang khach = new KhachHang();
         KhachHangSevice khachHangSevice = new KhachHangSevice();
+
         public RegisterForm()
         {
             InitializeComponent();
@@ -55,7 +56,7 @@ namespace ASMWPF
                 lbRegisterNotify.Content = "UserName is null";
                 return false;
             }
-            else if (!Regex.IsMatch(txtPassword.Password.ToString(), @"^(?=.*[A - Za - z])(?=.*\d)[A - Za - z\d]{ 8,}$"))
+            else if (!Regex.IsMatch(txtPassword.Password.ToString(), @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"))
             {
                 lbRegisterNotify.Content = "pass is >8 and have char and number";
                 return false;
@@ -75,7 +76,7 @@ namespace ASMWPF
                 lbRegisterNotify.Content = "Email is Wrong format";
                 return false;
             }
-            else if (!Regex.IsMatch(txtPhone.Text, @"^[\+]?[0-9]{2}?[0-9]{9,10}"))
+            else if (!Regex.IsMatch(txtPhone.Text, @"^(84|0[3|5|7|8|9])+([0-9]{8})")) // [\+]?[0-9]{2}?[0-9]{9,10}
             {
                 lbRegisterNotify.Content = "Phone is Wrong format";
                 return false;
