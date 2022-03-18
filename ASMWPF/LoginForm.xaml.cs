@@ -33,12 +33,32 @@ namespace ASMWPF
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            Login();   
+        }
+
+        private void lbRegister_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            RegisterForm  register = new RegisterForm();
+            register.Show();
+            this.Close();
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Login();
+            }
+        }
+
+        void Login()
+        {
             string username = txtUsername.Text;
             string password = txtPassword.Password.ToString();
 
             khachHang = khachHangSevice.CheckLogin(username, password);
 
-            if(khachHang != null)
+            if (khachHang != null)
             {
                 if (khachHang.Role.Equals("User") && khachHang.Tt.Equals(1))
                 {
@@ -63,18 +83,14 @@ namespace ASMWPF
                     MessageBox.Show("Sorry but your account has been blocked");
                 }
             }
-            else
+            else if (username.Equals("") || password.Equals(""))
             {
-                MessageBox.Show("sai oi");
+                MessageBox.Show("Null kìa");
             }
-            
-        }
-
-        private void lbRegister_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            RegisterForm  register = new RegisterForm();
-            register.Show();
-            this.Close();
+            else if(khachHang == null)
+            {
+                MessageBox.Show("Sai òi nha");
+            }
         }
     }
 }

@@ -30,8 +30,8 @@
         </Rectangle>
         <Label Content="Username" HorizontalAlignment="Left" Margin="142,167,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" FontSize="16" FontFamily="Prestige Elite Std"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="106,212,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontFamily="Prestige Elite Std"/>
-        <PasswordBox x:Name="txtPassword" Margin="225,217,212,0" VerticalAlignment="Top" Background="Black" Foreground="White" Height="24" FontSize="16"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="254,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180" Height="24" Background="Black" Foreground="White" TextAlignment="Justify" MaxLines="1" FontSize="16"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="254,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180" Height="24" Background="Black" Foreground="White" TextAlignment="Justify" MaxLines="1" FontSize="16" KeyDown="OnKeyDownHandler"/>
+        <PasswordBox x:Name="txtPassword" Margin="225,217,212,0" VerticalAlignment="Top" Background="Black" Foreground="White" Height="24" FontSize="16" KeyDown="OnKeyDownHandler"/>
         <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="224,270,0,0" VerticalAlignment="Top" Height="26" Width="110" BorderBrush="Black" Background="Black" FontSize="16" Foreground="White" FontFamily="Segoe UI" Click="btnLogin_Click"/>
         <Label Content="Meal Ordering" HorizontalAlignment="Left" Margin="126,48,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" FontFamily="Prestige Elite Std" FontSize="20"/>
         <Label x:Name="lbRegister" Content="Register" HorizontalAlignment="Left" Margin="532,345,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" MouseDown="lbRegister_MouseDown"/>
