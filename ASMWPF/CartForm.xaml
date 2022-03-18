@@ -46,7 +46,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="" Margin="10,0,0,10" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="41">
+        <Button Content="" Margin="10,0,0,10" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="41" Click="btnLogout_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/images/logout.png"/>

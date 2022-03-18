@@ -39,6 +39,20 @@ namespace ASMWPF
             cart.Show();
             this.Close();
         }
-    }
 
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
+        }
+    }
 }
