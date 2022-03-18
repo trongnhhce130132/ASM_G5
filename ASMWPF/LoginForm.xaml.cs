@@ -40,20 +40,27 @@ namespace ASMWPF
 
             if(khachHang != null)
             {
-                MessageBox.Show("dung oi");
-                if (khachHang.Role.Equals("User"))
+                if (khachHang.Role.Equals("User") && khachHang.Tt.Equals(1))
                 {
                     MonAnForm monAn = new MonAnForm();
                     monAn.khach = khachHang;
+                    MessageBox.Show("Welcome " + khachHang.HotenKh);
                     monAn.Show();
                     this.Close();
                 }
-                if (khachHang.Role.Equals("Admin"))
+
+                if (khachHang.Role.Equals("Admin") && khachHang.Tt.Equals(1))
                 {
                     AdminHomePageForm admin = new AdminHomePageForm();
                     admin.admin = khachHang;
+                    MessageBox.Show("Welcome admin: " + khachHang.HotenKh);
                     admin.Show();
                     this.Close();
+                }
+
+                if ((khachHang.Role.Equals("User") || khachHang.Role.Equals("Admin")) && khachHang.Tt.Equals(2))
+                {
+                    MessageBox.Show("Sorry but your account has been blocked");
                 }
             }
             else

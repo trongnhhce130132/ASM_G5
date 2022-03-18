@@ -92,7 +92,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("GioHang is already exist.");
+                    throw new Exception("Cart is already exist.");
                 }
 
             }
@@ -114,7 +114,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("GioHang does not already exist.");
+                    throw new Exception("Cart does not exist.");
                 }
 
             }
@@ -136,7 +136,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("GioHang does not already exist.");
+                    throw new Exception("Cart does not exist.");
                 }
 
             }

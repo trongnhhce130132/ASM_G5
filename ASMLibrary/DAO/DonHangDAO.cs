@@ -91,7 +91,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("DonHang is already exist.");
+                    throw new Exception("Order is already exist.");
                 }
 
             }
@@ -113,7 +113,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("DonHang does not already exist.");
+                    throw new Exception("Order does not exist.");
                 }
 
             }
@@ -135,7 +135,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("DonHang does not already exist.");
+                    throw new Exception("Order does not exist.");
                 }
 
             }

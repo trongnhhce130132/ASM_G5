@@ -107,7 +107,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("Comment is already exist.");
+                    throw new Exception("Comment is exist.");
                 }
 
             }
@@ -129,7 +129,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("Comment does not already exist.");
+                    throw new Exception("Comment does not exist.");
                 }
 
             }
@@ -151,7 +151,7 @@ namespace ASMLibrary.DAO
                 }
                 else
                 {
-                    throw new Exception("Comment does not already exist.");
+                    throw new Exception("Comment does not exist.");
                 }
 
             }

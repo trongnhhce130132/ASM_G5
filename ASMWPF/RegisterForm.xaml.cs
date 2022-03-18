@@ -97,10 +97,8 @@ namespace ASMWPF
             {
                 try
                 {
-
                     khachHangSevice.AddKhachHang(khachHang());
                     MessageBox.Show("add new");
-
                 }
                 catch (Exception)
                 {
@@ -111,6 +109,21 @@ namespace ASMWPF
                 this.Close();
             }
 
+        }
+
+        private void btnBackLogin_Click(object sender, RoutedEventArgs e)
+        {
+            txtUsername.Text = "";
+            txtPassword.Password = "";
+            txtConfirmPass.Password = "";
+            txtFullname.Text = "";
+            txtEmail.Text = "";
+            txtPhone.Text = "";
+            txtAddress.Text = "";
+
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
         }
 
     }

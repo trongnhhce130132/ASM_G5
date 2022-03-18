@@ -26,6 +26,16 @@ namespace ASMWPF
         public AdminHomePageForm()
         {
             InitializeComponent();
+            ClearErrorLabel();
+        }
+
+        void ClearErrorLabel()
+        {
+            lbNameError.Content = "";
+            lbNoteError.Content = "";
+            lbPriceError.Content = "";
+            lbStatusError.Content = "";
+            lbImg.Content = "";
         }
 
 
