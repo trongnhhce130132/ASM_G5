@@ -9,8 +9,11 @@
 
   <ItemGroup>
     <None Remove="images\arrow.png" />
+    <None Remove="images\delete.png" />
+    <None Remove="images\edit.png" />
     <None Remove="images\fast-food.png" />
     <None Remove="images\home.png" />
+    <None Remove="images\info.png" />
     <None Remove="images\logout.png" />
     <None Remove="images\minus.png" />
     <None Remove="images\note.png" />
@@ -29,8 +32,11 @@
 
   <ItemGroup>
     <Resource Include="images\arrow.png" />
+    <Resource Include="images\delete.png" />
+    <Resource Include="images\edit.png" />
     <Resource Include="images\fast-food.png" />
     <Resource Include="images\home.png" />
+    <Resource Include="images\info.png" />
     <Resource Include="images\logout.png" />
     <Resource Include="images\minus.png" />
     <Resource Include="images\note.png" />

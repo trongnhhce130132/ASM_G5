@@ -48,6 +48,13 @@ namespace ASMWPF
                     monAn.Show();
                     this.Close();
                 }
+                if (khachHang.Role.Equals("Admin"))
+                {
+                    AdminHomePageForm admin = new AdminHomePageForm();
+                    admin.admin = khachHang;
+                    admin.Show();
+                    this.Close();
+                }
             }
             else
             {

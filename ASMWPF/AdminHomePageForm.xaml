@@ -1,0 +1,89 @@
+﻿<Window x:Class="ASMWPF.AdminHomePageForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASMWPF"
+        mc:Ignorable="d"
+        Title="AdminHomePageForm" Height="479" Width="682" ResizeMode="NoResize">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Items" Margin="-2,-2,-35,-15">
+                <Grid Background="White" Height="368">
+                    <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,-13">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="3" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                                    <Image Source="{Binding ImageData}" Width="160" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+                                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                        <Button x:Name="btnEdit" Content="{Binding Edit}" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0">
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Image Source="/images/edit.png"/>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                        <Button x:Name="btnDelete" Content="{Binding Delete}" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" >
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Image Source="/images/delete.png"/>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                        <Button x:Name="btnDetail" Content="{Binding Detail}" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" >
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Image Source="/images/info.png"/>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </WrapPanel>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Create" Margin="34,-2,-71,-15">
+                <Grid Background="White" Margin="0,10,0,0">
+                    <Label Content="Name" HorizontalAlignment="Left" Margin="40,30,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <Label Content="Category" HorizontalAlignment="Left" Margin="40,90,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <Label Content="Price" HorizontalAlignment="Left" Margin="40,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <Label Content="Note" HorizontalAlignment="Left" Margin="40,210,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <Label Content="Status" HorizontalAlignment="Left" Margin="40,270,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <Label Content="Image" HorizontalAlignment="Left" Margin="40,330,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <TextBox x:Name="tbName" HorizontalAlignment="Left" Margin="186,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="16" FontWeight="Bold"/>
+                    <TextBox x:Name="tbPrice" HorizontalAlignment="Left" Margin="186,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="16" FontWeight="Bold"/>
+                    <TextBox x:Name="tbNote" HorizontalAlignment="Left" Margin="186,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="16" FontWeight="Bold" Height="42"/>
+                    <TextBox x:Name="tbStatus" HorizontalAlignment="Left" Margin="186,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="16" FontWeight="Bold"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="186,95,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button Content="Create" HorizontalAlignment="Left" Margin="292,361,0,0" VerticalAlignment="Top" Height="38" Width="138" FontSize="16" FontWeight="Bold" BorderBrush="White" Background="White"/>
+                    <Label x:Name="lbNameError" Content="Name error" HorizontalAlignment="Left" Margin="555,35,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+                    <Label x:Name="lbPriceError" Content="Price error" HorizontalAlignment="Left" Margin="555,151,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+                    <Label x:Name="lbNoteError" Content="Note error" HorizontalAlignment="Left" Margin="555,215,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+                    <Label x:Name="lbStatusError" Content="Status error" HorizontalAlignment="Left" Margin="555,270,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+                    <Button Content="image..." Name="btnOpenFile" Click="btnOpenFile_Click" HorizontalAlignment="Left" Margin="528,338,0,0" VerticalAlignment="Top" Width="60"/>
+                    <Label x:Name="lbImg" Content="Link img display here" HorizontalAlignment="Left" Margin="186,335,0,0" VerticalAlignment="Top" Width="337"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Account" Margin="71,-2,-108,-14">
+                <Grid Background="#FFE5E5E5" Margin="0,11,0,0"/>
+            </TabItem>
+        </TabControl>
+        <Button Content="Button" Margin="0,0,50,0" HorizontalAlignment="Right" Width="36" Height="30" VerticalAlignment="Top">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/images/logout.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>
