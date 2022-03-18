@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASMWPF"
         mc:Ignorable="d"
-        Title="DetailsForm" Height="452" Width="550" ResizeMode="NoResize" Background="#FFD8D8D8">
+        Title="DetailsForm" Height="452" Width="550" ResizeMode="NoResize" Background="#FFD8D8D8"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="323" Margin="-42,46,0,0" VerticalAlignment="Top" Width="880" Fill="White"/>
         <Rectangle HorizontalAlignment="Center" Height="100" Margin="0,-59,0,0" Stroke="White" VerticalAlignment="Top" Width="930" Fill="White"/>

@@ -1,8 +1,5 @@
-﻿using ASMLibrary.DataAccess;
-using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,26 +15,14 @@ using System.Windows.Shapes;
 namespace ASMWPF
 {
     /// <summary>
-    /// Interaction logic for AdminHomePageForm.xaml
+    /// Interaction logic for AdminUpdateForm.xaml
     /// </summary>
-    public partial class AdminHomePageForm : Window
+    public partial class AdminUpdateForm : Window
     {
-        public KhachHang admin;
-        public AdminHomePageForm()
+        public AdminUpdateForm()
         {
             InitializeComponent();
-            ClearErrorLabel();
         }
-
-        void ClearErrorLabel()
-        {
-            lbNameError.Content = "";
-            lbNoteError.Content = "";
-            lbPriceError.Content = "";
-            lbStatusError.Content = "";
-            lbImg.Content = "";
-        }
-
 
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
@@ -60,17 +45,10 @@ namespace ASMWPF
             }
         }
 
-        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            LoginForm login = new LoginForm();
-            login.Show();
-            this.Close();
-        }
 
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
-        {
-            AdminUpdateForm update = new AdminUpdateForm();
-            update.Show();
+            this.Close();
         }
     }
 }
