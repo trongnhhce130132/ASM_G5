@@ -11,7 +11,7 @@
         <Button Content="" Margin="11,97,0,0" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40">
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="/images/user_gradient.png"/>
+                    <Image Source="/images/user.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>

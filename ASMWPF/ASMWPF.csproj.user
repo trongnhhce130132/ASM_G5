@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="DetailsForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="HomePageForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +27,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="DetailsForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="HomePageForm.xaml">
       <SubType>Designer</SubType>
     </Page>
