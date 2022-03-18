@@ -23,5 +23,11 @@ namespace ASMWPF
         {
             InitializeComponent();
         }
+
+        // for this code image needs to be a project resource
+        private BitmapImage LoadImage(string filename)
+        {
+            return new BitmapImage(new Uri(filename));
+        }
     }
 }

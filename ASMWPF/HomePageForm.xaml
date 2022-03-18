@@ -22,13 +22,22 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="67,56,0,290" HorizontalAlignment="Left" Width="703" Foreground="Red" BorderBrush="{x:Null}" Background="{x:Null}">
-            <ListBox.ItemsPanel>
+        <ListView x:Name="lvMostOrdered" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="708" Margin="62,58,0,0" Background="{x:Null}" BorderBrush="Black">
+            <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel IsItemsHost="True" />
+                    <UniformGrid Columns="3" />
                 </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                        <Image Source="{Binding ImageData}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                        <Button x:Name="btn" Content="{Binding id}" Height="30" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button Content="" Margin="10,39,0,0" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42">
             <Button.Template>
                 <ControlTemplate>
@@ -44,7 +53,22 @@
             </Button.Template>
         </Button>
         <Label Content="Most ordered:" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="67,218,10,8"/>
+        <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="703" Margin="62,213,0,0" Background="{x:Null}" BorderBrush="Black">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                        <Image Source="{Binding ImageData}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                        <Button x:Name="btn" Content="{Binding id}" Height="30" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Label Content="Menu:" HorizontalAlignment="Left" Margin="67,179,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
