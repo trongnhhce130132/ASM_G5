@@ -5,24 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASMWPF"
         mc:Ignorable="d"
-        Title="HomePageForm" Height="485" Width="780" Background="white" Foreground="White" ResizeMode="NoResize">
+        Title="HomePageForm" Height="485" Width="780" Background="white" Foreground="White" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="469" Stroke="Black" VerticalAlignment="Center" Width="62" Fill="#FFCACACA"/>
-        <Button Content="" Margin="11,97,0,0" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40">
+        <Button x:Name="btnUser" Content="" Margin="11,97,0,0" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" Click="btnUser_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/images/user.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="" Margin="9,149,0,0" Foreground="White" BorderBrush="Black" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Width="44">
+        <Button x:Name="btnCart" Content="" Margin="9,149,0,0" Foreground="White" BorderBrush="Black" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Width="44" Click="btnCart_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/images/shopping-cart.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ListView x:Name="lvMostOrdered" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="708" Margin="62,58,0,0" Background="{x:Null}" BorderBrush="Black">
+        <ListView x:Name="lvMostOrdered" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="708" Margin="62,58,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3" />
@@ -41,7 +42,7 @@
         <Button Content="" Margin="10,39,0,0" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42">
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="/images/home.png"/>
+                    <Image Source="/images/home_gradient.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
@@ -53,7 +54,7 @@
             </Button.Template>
         </Button>
         <Label Content="Most ordered:" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
-        <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="703" Margin="62,213,0,0" Background="{x:Null}" BorderBrush="Black">
+        <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="703" Margin="62,213,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3" />

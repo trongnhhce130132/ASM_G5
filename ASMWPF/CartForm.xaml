@@ -1,0 +1,80 @@
+﻿<Window x:Class="ASMWPF.CartForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASMWPF"
+        mc:Ignorable="d"
+        Title="HomePageForm" Height="485" Width="780" Background="white" Foreground="White" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="469" Stroke="Black" VerticalAlignment="Center" Width="62" Fill="#FFCACACA"/>
+        <Button x:Name="btnUser" Content="" Margin="11,97,0,0" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" Click="btnUser_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/images/user.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="" Margin="9,149,0,0" Foreground="White" BorderBrush="Black" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Width="44">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/images/shopping-cart_gradient.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <ListView x:Name="lvMostOrdered" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="708" Margin="62,58,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                        <Image Source="{Binding ImageData}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                        <Button x:Name="btn" Content="{Binding id}" Height="30" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="btnHome" Content="" Margin="10,39,0,0" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" Click="btnHome_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/images/home.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="" Margin="10,0,0,10" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="41">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/images/logout.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Content="Cart form" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
+        <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="703" Margin="62,213,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                        <Image Source="{Binding ImageData}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                        <Button x:Name="btn" Content="{Binding id}" Height="30" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Content="Menu:" HorizontalAlignment="Left" Margin="67,179,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+    </Grid>
+</Window>

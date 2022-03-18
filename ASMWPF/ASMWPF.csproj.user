@@ -10,6 +10,9 @@
     <Compile Update="AdminHomePageForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CartForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="DetailsForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,9 +31,15 @@
     <Compile Update="RegisterForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AdminHomePageForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CartForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DetailsForm.xaml">
@@ -55,6 +64,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RegisterForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserForm.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

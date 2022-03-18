@@ -29,5 +29,19 @@ namespace ASMWPF
         {
             return new BitmapImage(new Uri(filename));
         }
+
+        private void btnCart_Click(object sender, RoutedEventArgs e)
+        {
+            CartForm cart = new CartForm();
+            cart.Show();
+            this.Close();
+        }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            UserForm user = new UserForm();
+            user.Show();
+            this.Close();
+        }
     }
 }

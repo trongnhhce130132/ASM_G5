@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\App.xaml
-9555221381
+11-468180236
 
-11-420819592
+131214382272
 221491644495
-AdminHomePageForm.xaml;DetailsForm.xaml;HomePageForm.xaml;LoaiForm.xaml;LoginForm.xaml;MainWindow.xaml;MonAnForm.xaml;OrderForm.xaml;RegisterForm.xaml;
+AdminHomePageForm.xaml;CartForm.xaml;DetailsForm.xaml;HomePageForm.xaml;LoaiForm.xaml;LoginForm.xaml;MainWindow.xaml;MonAnForm.xaml;OrderForm.xaml;RegisterForm.xaml;UserForm.xaml;
 
 False
 

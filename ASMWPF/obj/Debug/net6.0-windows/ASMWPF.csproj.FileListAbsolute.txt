@@ -274,3 +274,7 @@ C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-wi
 C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\DetailsForm.baml
 C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\AdminHomePageForm.g.cs
 C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\AdminHomePageForm.baml
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\CartForm.g.cs
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\UserForm.g.cs
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\CartForm.baml
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\UserForm.baml
