@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace ASMWPF
+{
+    /// <summary>
+    /// Interaction logic for HomePageForm.xaml
+    /// </summary>
+    public partial class HomePageForm : Window
+    {
+        public HomePageForm()
+        {
+            InitializeComponent();
+        }
+
+        // for this code image needs to be a project resource
+        private BitmapImage LoadImage(string filename)
+        {
+            return new BitmapImage(new Uri(filename));
+        }
+    }
+}

@@ -8,11 +8,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\arrow.png" />
+    <None Remove="images\fast-food.png" />
+    <None Remove="images\home.png" />
+    <None Remove="images\logout.png" />
+    <None Remove="images\minus.png" />
+    <None Remove="images\note.png" />
+    <None Remove="images\plus.png" />
+    <None Remove="images\shopping-cart.png" />
+    <None Remove="images\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ASMLibrary\ASMLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\arrow.png" />
+    <Resource Include="images\fast-food.png" />
+    <Resource Include="images\home.png" />
+    <Resource Include="images\logout.png" />
+    <Resource Include="images\minus.png" />
+    <Resource Include="images\note.png" />
+    <Resource Include="images\plus.png" />
+    <Resource Include="images\shopping-cart.png" />
+    <Resource Include="images\user.png" />
   </ItemGroup>
 
   <ItemGroup>

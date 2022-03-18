@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="DetailsForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HomePageForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="LoaiForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +33,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="DetailsForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HomePageForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoaiForm.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -43,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MonAnForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OrderForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RegisterForm.xaml">
