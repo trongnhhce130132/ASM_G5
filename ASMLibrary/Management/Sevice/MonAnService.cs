@@ -11,18 +11,19 @@ namespace ASMLibrary.Management.Sevice
 {
     public class MonAnService : IMonAnService
     {
-        public void AddMonAn(MonAn monAn) => MonAnDAO.Instance.AddMonAn(monAn);
+        MonAnDAO monAnDAO = new MonAnDAO();
+        public void AddMonAn(MonAn monAn) => monAnDAO.AddMonAn(monAn);
 
-        public void DeleteMonAn(MonAn monAn) => MonAnDAO.Instance.DeleteMonAn(monAn);
+        public void DeleteMonAn(MonAn monAn) => monAnDAO.DeleteMonAn(monAn);
 
-        public MonAn GetMonAnByID(string ID) => MonAnDAO.Instance.GetMonAnByID(ID);
+        public MonAn GetMonAnByID(string ID) => monAnDAO.GetMonAnByID(ID);
 
-        public IEnumerable<MonAn> GetMonAns() => MonAnDAO.Instance.GetMonAnList();
+        public IEnumerable<MonAn> GetMonAns() => monAnDAO.GetMonAnList();
 
-        public IEnumerable<MonAn> SearchMonAnByName(String name) => MonAnDAO.Instance.SearchMonAnByName(name);
+        public IEnumerable<MonAn> SearchMonAnByName(String name) => monAnDAO.SearchMonAnByName(name);
 
-        public void UpdateMonAn(MonAn monAn) => MonAnDAO.Instance.UpdateMonAn(monAn);
+        public void UpdateMonAn(MonAn monAn) => monAnDAO.UpdateMonAn(monAn);
 
-        public String GetIDCuoi() => MonAnDAO.Instance.GetIDCuoi();
+        public String GetIDCuoi() => monAnDAO.GetIDCuoi();
     }
 }

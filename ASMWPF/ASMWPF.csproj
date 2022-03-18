@@ -57,4 +57,10 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="Menu.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
 </Project>

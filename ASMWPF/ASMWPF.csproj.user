@@ -25,6 +25,12 @@
     <Compile Update="LoginForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Menu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MenuPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MonAnForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +61,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Menu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MonAnForm.xaml">

@@ -62,9 +62,12 @@ namespace ASMWPF
             {
                 if (khachHang.Role.Equals("User") && khachHang.Tt.Equals(1))
                 {
+
                     MonAnForm monAn = new MonAnForm();
                     monAn.khach = khachHang;
                     MessageBox.Show("Welcome " + khachHang.HotenKh);
+
+
                     monAn.Show();
                     this.Close();
                 }
