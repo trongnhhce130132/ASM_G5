@@ -43,8 +43,8 @@ namespace ASMWPF
                 MessageBox.Show("dung oi");
                 if (khachHang.Role.Equals("User"))
                 {
-                    MonAnForm monAn = new MonAnForm();
-                    monAn.khach = khachHang;
+                    Menu monAn = new Menu();
+                 //   monAn.khach = khachHang;
                     monAn.Show();
                     this.Close();
                 }
