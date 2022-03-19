@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASMWPF"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
         Title="HomePageForm" Height="485" Width="780" Background="white" Foreground="White" ResizeMode="NoResize">
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="469" Stroke="Black" VerticalAlignment="Center" Width="62" Fill="#FFCACACA"/>
@@ -22,7 +22,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ListView x:Name="lvMostOrdered" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="708" Margin="62,58,0,0" Background="{x:Null}" BorderBrush="Black">
+        <ListView x:Name="lvMostOrdered" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="708" Margin="62,58,0,0" Background="{x:Null}" BorderBrush="Black" MouseDoubleClick="lvMostOrdered_MouseDoubleClick" MouseDown="lvMostOrdered_MouseDown">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3" />
@@ -31,9 +31,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
-                        <Image Source="{Binding ImageData}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-                        <Button x:Name="btn" Content="{Binding id}" Height="30" />
+                        <Image Source="{Binding ImageData}" Width="200" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -45,7 +43,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="" Margin="10,0,0,10" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="41">
+        <Button x:Name="btnlogout" Content="" Margin="10,0,0,10" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="41" MouseDown="btnlogout_MouseDown" Click="btnlogout_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/images/logout.png"/>
@@ -53,7 +51,7 @@
             </Button.Template>
         </Button>
         <Label Content="Most ordered:" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
-        <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="703" Margin="62,213,0,0" Background="{x:Null}" BorderBrush="Black">
+        <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="703" Margin="62,213,0,0" Background="{x:Null}" BorderBrush="Black" MouseDoubleClick="lvMenu_MouseDoubleClick">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3" />
@@ -62,14 +60,32 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
-                        <Image Source="{Binding ImageData}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <Image Source="{Binding ImageData}" Width="200" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-                        <Button x:Name="btn" Content="{Binding id}" Height="30" />
+                        <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+                       
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <Label Content="Menu:" HorizontalAlignment="Left" Margin="67,179,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="462,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" Background="#FFF7F3F3" Height="32" RenderTransformOrigin="0.488,0.47" TextChanged="txtSearch_TextChanged" >
+            <TextBox.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.OpacityMask>
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>

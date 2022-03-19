@@ -110,7 +110,16 @@
 
         </Grid>
         <Rectangle Margin="205,73,4,318" Grid.RowSpan="2"/>
-        <Image HorizontalAlignment="Left" Height="109" Margin="202,70,0,0" VerticalAlignment="Top" Width="299" Source="/Image/food2.png"/>
+        <Image HorizontalAlignment="Left" Height="109" Margin="202,70,0,0" VerticalAlignment="Top" Width="293" Source="/Image/food2.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.698"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
         <Image Margin="992,24,119,333" Source="/Image/icons8-search-30.png" Stretch="Fill" RenderTransformOrigin="-0.675,0.656" Width="24" Height="24"/>
         <Grid Margin="204,177,0,8" Grid.RowSpan="2">
             <Grid.RowDefinitions>

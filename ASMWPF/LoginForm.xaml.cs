@@ -40,12 +40,12 @@ namespace ASMWPF
 
             if(khachHang != null)
             {
-                MessageBox.Show("dung oi");
+               
                 if (khachHang.Role.Equals("User"))
                 {
-                    Menu monAn = new Menu();
-                 //   monAn.khach = khachHang;
-                    monAn.Show();
+                    HomePageForm Home = new HomePageForm(khachHang);
+
+                    Home.Show();
                     this.Close();
                 }
             }

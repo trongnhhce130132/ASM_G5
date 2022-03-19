@@ -8,7 +8,7 @@
         Title="OrderForm" Height="410" Width="480" ResizeMode="NoResize">
     <Grid>
         <Label Content="Deliver to:" Margin="10,29,402,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF8C8C8C"/>
-        <TextBox x:Name="tbAddress" Margin="10,52,10,271" TextWrapping="Wrap" Text="" BorderBrush="#FFD4D4D4"/>
+        <TextBox x:Name="txtAddress" Margin="10,52,10,271" TextWrapping="Wrap" Text="" BorderBrush="#FFD4D4D4"/>
         <Button Content="" Margin="10,5,0,0" Foreground="White" BorderBrush="Black" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="34">
             <Button.Template>
                 <ControlTemplate>

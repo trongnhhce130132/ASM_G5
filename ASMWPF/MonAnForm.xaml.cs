@@ -22,7 +22,7 @@ namespace ASMWPF
     /// </summary>
     public partial class MonAnForm : Window
     {
-        MonAnService monAnService;
+        MonAnService monAnService = new MonAnService();
         public KhachHang khach;
         public MonAnForm()
         {
