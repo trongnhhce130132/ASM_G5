@@ -147,15 +147,15 @@
             </TextBox.Style>
         </TextBox>
         <Button x:Name="btnChangePassword" Content="Change" HorizontalAlignment="Left" Margin="603,241,0,0" VerticalAlignment="Top" Width="60" Height="30" Click="btnChangePassword_Click"/>
-        <Label x:Name="lbPasswordError" Content="Current password error" HorizontalAlignment="Left" Margin="573,104,0,0" VerticalAlignment="Top" Width="182" Background="{x:Null}" Foreground="Red" FontWeight="Bold"/>
-        <Label x:Name="lbNewPassword" Content="New password error" HorizontalAlignment="Left" Margin="558,158,0,0" VerticalAlignment="Top" Width="182" Foreground="Red" Background="{x:Null}" FontWeight="Bold"/>
-        <Label Content="Confirm password error" HorizontalAlignment="Left" Margin="547,208,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}" Foreground="Red" FontWeight="Bold"/>
-        <Label x:Name="lbFullNameError" Content="Fullname error" HorizontalAlignment="Left" Margin="210,158,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
-        <Label x:Name="lbMailError" Content="Mail error" HorizontalAlignment="Left" Margin="210,204,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
-        <Label x:Name="lbPhoneError" Content="Phone error" HorizontalAlignment="Left" Margin="210,253,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
-        <Label x:Name="lbAddressError" Content="Address error" HorizontalAlignment="Left" Margin="210,375,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
-        <Label x:Name="lbSaveNotify" Content="Save success notification" HorizontalAlignment="Left" Margin="272,32,0,0" VerticalAlignment="Top" Width="141" Background="{x:Null}" Foreground="#FF08F900" FontWeight="Normal"/>
-        <Label x:Name="lbChangeNotify" Content="Change success notification" HorizontalAlignment="Left" Margin="613,32,0,0" VerticalAlignment="Top" Width="157" Background="{x:Null}" Foreground="#FF08F900" FontWeight="Normal"/>
+        <Label x:Name="lbPasswordError" Content="" HorizontalAlignment="Left" Margin="573,104,0,0" VerticalAlignment="Top" Width="182" Background="{x:Null}" Foreground="Red" FontWeight="Bold"/>
+        <Label x:Name="lbNewPassword" Content="" HorizontalAlignment="Left" Margin="558,158,0,0" VerticalAlignment="Top" Width="182" Foreground="Red" Background="{x:Null}" FontWeight="Bold"/>
+        <Label x:Name="lbConfirmPassError" Content="" HorizontalAlignment="Left" Margin="547,208,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}" Foreground="Red" FontWeight="Bold"/>
+        <Label x:Name="lbFullNameError" Content="" HorizontalAlignment="Left" Margin="210,158,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
+        <Label x:Name="lbMailError" Content="" HorizontalAlignment="Left" Margin="210,204,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
+        <Label x:Name="lbPhoneError" Content="" HorizontalAlignment="Left" Margin="210,253,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
+        <Label x:Name="lbAddressError" Content="" HorizontalAlignment="Left" Margin="210,375,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
+        <Label x:Name="lbSaveNotify" Content="" HorizontalAlignment="Left" Margin="272,32,0,0" VerticalAlignment="Top" Width="141" Background="{x:Null}" Foreground="#FF08F900" FontWeight="Normal"/>
+        <Label x:Name="lbChangeNotify" Content="" HorizontalAlignment="Left" Margin="613,32,0,0" VerticalAlignment="Top" Width="157" Background="{x:Null}" Foreground="#FF08F900" FontWeight="Normal"/>
 
     </Grid>
 </Window>
