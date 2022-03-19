@@ -33,7 +33,7 @@ namespace ASMWPF
         public void load()
         {
 
-            MonAn monAn = new MonAn();
+            
             monAnList = monAnService.GetMonAns().ToList();
             List<FoodData> foods = new List<FoodData>();
             List<FoodData> foodsMost = new List<FoodData>();
@@ -58,7 +58,7 @@ namespace ASMWPF
 
         private void btnCart_Click(object sender, RoutedEventArgs e)
         {
-            CartForm cart = new CartForm();
+            CartForm cart = new CartForm(khachHang);
             cart.Show();
             this.Close();
         }

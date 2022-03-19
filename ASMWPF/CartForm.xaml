@@ -38,14 +38,24 @@
             </Button.Template>
         </Button>
         <Label Content="Cart information" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
-        <ListView x:Name="lvCart" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="67,61,0,57">
+        <ListView x:Name="lvCart" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="67,61,0,57" MouseDoubleClick="lvCart_MouseDoubleClick">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+
+                    <!--<GridViewColumn Header="Hình">
+                        <Image Source="D:\anh.png" Width="30" Height="30" Margin="0,0,5,0" />
+                    </GridViewColumn>-->
+                    <GridViewColumn Header="Name Food" Width="300" DisplayMemberBinding="{Binding Path=Name }"/>
+                    <GridViewColumn Header="Quantity" Width="200" DisplayMemberBinding="{Binding Path=Soluong}"/>
+                    <GridViewColumn Header="Price" Width="200" DisplayMemberBinding="{Binding Path=Price, StringFormat={}{0:N1}}"/>
+
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btnCheckout" Content="Checkout" HorizontalAlignment="Left" Margin="381,421,0,0" VerticalAlignment="Top" Height="38" Width="84" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="btnOrder" Content="Order" HorizontalAlignment="Left" Margin="480,0,0,15" VerticalAlignment="Bottom" Width="88" Height="25" FontWeight="Bold" FontSize="14" Click="btnOrder_Click" />
+        <!--<Button Content="Order" HorizontalAlignment="Left" Margin="480,418,0,0" VerticalAlignment="Top" Height="38" Width="84" FontWeight="Bold" FontSize="14"/>-->
+        <Label x:Name="lbgia" Content="Money here" ContentStringFormat="{}{0:N1}" HorizontalAlignment="Left" Margin="165,0,0,13" Width="155" Height="30" VerticalAlignment="Bottom" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Total:" HorizontalAlignment="Left" Margin="108,0,0,16" Height="26" VerticalAlignment="Bottom" FontSize="14"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
