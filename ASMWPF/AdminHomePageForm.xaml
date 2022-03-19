@@ -72,7 +72,46 @@
             </TabItem>
             <TabItem Header="Account" Margin="71,-2,-108,-14">
                 <Grid Background="#FFE5E5E5" Margin="0,11,0,0">
-                    <ListView d:ItemsSource="{d:SampleData ItemCount=5}">
+                    <Button x:Name="btnExportAccount" Content="" Margin="621,6,0,0" Foreground="White" BorderBrush="Black" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Width="34">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="/images/export.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnRefreshAccount" Content="" Margin="557,10,0,0" Foreground="White" BorderBrush="Black" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="/images/refresh.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <ListView x:Name="lvAccount" d:ItemsSource="{d:SampleData ItemCount=5}" Height="371" Margin="0,54,0,10">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Order" Margin="105,-2,-140,-14">
+                <Grid Height="412" Background="#FFD8D8D8">
+                    <Button x:Name="btnExportOrder" Content="" Margin="621,6,0,0" Foreground="White" BorderBrush="Black" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Width="34">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="/images/export.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnRefreshOrder" Content="" Margin="557,10,0,0" Foreground="White" BorderBrush="Black" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="/images/refresh.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <ListView x:Name="lvOrder" d:ItemsSource="{d:SampleData ItemCount=5}" Height="371" Margin="0,54,0,10">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>
@@ -82,7 +121,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Content="Button" Margin="0,0,50,0" HorizontalAlignment="Right" Width="36" Height="30" VerticalAlignment="Top" Click="btnLogout_Click">
+        <Button Content="Button" Margin="0,0,10,0" HorizontalAlignment="Right" Width="36" Height="30" VerticalAlignment="Top" Click="btnLogout_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/images/logout.png"/>
