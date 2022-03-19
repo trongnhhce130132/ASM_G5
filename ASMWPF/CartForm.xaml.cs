@@ -26,16 +26,16 @@ namespace ASMWPF
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
-            UserForm user = new UserForm();
-            user.Show();
-            this.Close();
+            //UserForm user = new UserForm();
+            //user.Show();
+            //this.Close();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            HomePageForm home = new HomePageForm();
-            home.Show();
-            this.Close();
+            //HomePageForm home = new HomePageForm();
+            //home.Show();
+            //this.Close();
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)

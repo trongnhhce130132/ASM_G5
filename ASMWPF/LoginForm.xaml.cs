@@ -62,13 +62,9 @@ namespace ASMWPF
             {
                 if (khachHang.Role.Equals("User") && khachHang.Tt.Equals(1))
                 {
+                    HomePageForm Home = new HomePageForm(khachHang);
 
-                    MonAnForm monAn = new MonAnForm();
-                    monAn.khach = khachHang;
-                    MessageBox.Show("Welcome " + khachHang.HotenKh);
-
-
-                    monAn.Show();
+                    Home.Show();
                     this.Close();
                 }
 

@@ -21,5 +21,7 @@ namespace ASMLibrary.Management.Sevice
         public void UpdateKhachHang(KhachHang khachHang) => KhachHang.UpdateKhachHang(khachHang);
         public void DeleteKhachHang(KhachHang khachHang) => KhachHang.DeleteKhachHang(khachHang);
 
+        public KhachHang CheckUserName(string username) => KhachHang.CheckUserName(username);
+
     }
 }

@@ -55,10 +55,10 @@
             </Rectangle.RenderTransform>
         </Rectangle>
         <Label x:Name="lbUserName" Content="Username here" HorizontalAlignment="Left" Margin="210,80,0,0" VerticalAlignment="Top" Background="{x:Null}"/>
-        <TextBox x:Name="tbFullName" Text="Fullname here" HorizontalAlignment="Left" Margin="210,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Background="{x:Null}"/>
-        <TextBox x:Name="tvMail" Text="Mail here" HorizontalAlignment="Left" Margin="210,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Background="{x:Null}"/>
-        <TextBox x:Name="tbPhone" Text="Phone here" HorizontalAlignment="Left" Margin="210,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Background="{x:Null}"/>
-        <TextBox x:Name="tbAddress" Text="Address here" HorizontalAlignment="Left" Margin="210,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="100" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="txtFullName" Text="Fullname here" HorizontalAlignment="Left" Margin="210,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="txtMail" Text="Mail here" HorizontalAlignment="Left" Margin="210,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="txtPhone" Text="Phone here" HorizontalAlignment="Left" Margin="210,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="txtAddress" Text="Address here" HorizontalAlignment="Left" Margin="210,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="100" BorderBrush="{x:Null}" Background="{x:Null}"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="210,406,0,0" VerticalAlignment="Top" Width="60" Height="30" Click="btnSave_Click"/>
         <Rectangle HorizontalAlignment="Left" Margin="539,-79,0,-80" Stroke="Black" Width="232" RenderTransformOrigin="0.5,0.5" Fill="Black">
             <Rectangle.RenderTransform>
@@ -74,7 +74,7 @@
         <Label Content="Current password" HorizontalAlignment="Left" Margin="465,80,0,0" VerticalAlignment="Top"/>
         <Label Content="New password" HorizontalAlignment="Left" Margin="465,130,0,0" VerticalAlignment="Top"/>
         <Label Content="Confirm password" HorizontalAlignment="Left" Margin="436,180,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="595,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160">
+        <TextBox x:Name="txtpassword" HorizontalAlignment="Left" Margin="595,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160">
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -98,7 +98,7 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <TextBox HorizontalAlignment="Left" Margin="580,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160">
+        <TextBox x:Name="txtNewPass" HorizontalAlignment="Left" Margin="580,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160">
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -122,7 +122,7 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <TextBox HorizontalAlignment="Left" Margin="567,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160">
+        <TextBox x:Name="txtConfirmPass" HorizontalAlignment="Left" Margin="567,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160">
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>

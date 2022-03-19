@@ -17,7 +17,7 @@ namespace ASMLibrary.Management.IService
         void AddKhachHang(KhachHang khachHang);
         void UpdateKhachHang(KhachHang khachHang);
         void DeleteKhachHang(KhachHang khachHang);
-
+        KhachHang CheckUserName(string username);
 
     }
 }
