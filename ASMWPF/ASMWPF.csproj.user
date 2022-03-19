@@ -10,6 +10,9 @@
     <Compile Update="AdminHomePageForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AdminUpdateForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CartForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="AdminHomePageForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminUpdateForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CartForm.xaml">

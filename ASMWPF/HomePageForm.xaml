@@ -8,7 +8,7 @@
         Title="HomePageForm" Height="485" Width="780" Background="white" Foreground="White" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="469" Stroke="Black" VerticalAlignment="Center" Width="62" Fill="#FFCACACA"/>
+        <Rectangle HorizontalAlignment="Left" Height="469" VerticalAlignment="Center" Width="62" Fill="#FFCACACA"/>
         <Button x:Name="btnUser" Content="" Margin="11,97,0,0" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" Click="btnUser_Click">
             <Button.Template>
                 <ControlTemplate>
@@ -46,7 +46,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="" Margin="10,0,0,10" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="41">
+        <Button Content="" Margin="10,0,0,10" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="41" Click="btnLogout_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/images/logout.png"/>
@@ -71,6 +71,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <Label Content="Menu:" HorizontalAlignment="Left" Margin="67,179,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
+        <Rectangle HorizontalAlignment="Left" Height="4" Margin="62,175,0,0" VerticalAlignment="Top" Width="890" Grid.ColumnSpan="2" Fill="#FFD8D8D8"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>

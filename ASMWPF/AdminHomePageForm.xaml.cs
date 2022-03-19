@@ -59,5 +59,18 @@ namespace ASMWPF
                 lbImg.Content = filename;
             }
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            AdminUpdateForm update = new AdminUpdateForm();
+            update.Show();
+        }
     }
 }

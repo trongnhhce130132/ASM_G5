@@ -37,5 +37,12 @@ namespace ASMWPF
             home.Show();
             this.Close();
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
+        }
     }
 }

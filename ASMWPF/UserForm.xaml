@@ -30,19 +30,132 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="" Margin="10,0,0,10" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="41">
+        <Button Content="" Margin="10,0,0,10" Foreground="White" BorderBrush="Black" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="41" Click="btnLogout_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/images/logout.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Label Content="User form" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
-        <Label Content="Menu:" HorizontalAlignment="Left" Margin="67,179,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
-        </Grid.ColumnDefinitions>
+        <Label Content="User infomation" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
+        <Label Content="User name:" HorizontalAlignment="Left" Margin="90,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fullname:" HorizontalAlignment="Left" Margin="90,130,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mail:" HorizontalAlignment="Left" Margin="90,180,0,0" VerticalAlignment="Top"/>
+        <Label Content="Phone:" HorizontalAlignment="Left" Margin="90,230,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address:" HorizontalAlignment="Left" Margin="90,280,0,0" VerticalAlignment="Top"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="533" Margin="416,-23,0,0" VerticalAlignment="Top" Width="5" RenderTransformOrigin="0.5,0.5" Fill="#FFD8D8D8">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.014"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Label x:Name="lbUserName" Content="Username here" HorizontalAlignment="Left" Margin="210,80,0,0" VerticalAlignment="Top" Background="{x:Null}"/>
+        <TextBox x:Name="tbFullName" Text="Fullname here" HorizontalAlignment="Left" Margin="210,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="tvMail" Text="Mail here" HorizontalAlignment="Left" Margin="210,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="tbPhone" Text="Phone here" HorizontalAlignment="Left" Margin="210,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="tbAddress" Text="Address here" HorizontalAlignment="Left" Margin="210,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="100" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="210,406,0,0" VerticalAlignment="Top" Width="60" Height="30" Click="btnSave_Click"/>
+        <Rectangle HorizontalAlignment="Left" Margin="539,-79,0,-80" Stroke="Black" Width="232" RenderTransformOrigin="0.5,0.5" Fill="Black">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="15.516"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Label Content="Change Password" HorizontalAlignment="Left" Margin="430,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
+        <Label Content="Current password" HorizontalAlignment="Left" Margin="465,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="New password" HorizontalAlignment="Left" Margin="465,130,0,0" VerticalAlignment="Top"/>
+        <Label Content="Confirm password" HorizontalAlignment="Left" Margin="436,180,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="595,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160">
+            <TextBox.Style>
+                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <Style.Resources>
+                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                            <VisualBrush.Visual>
+                                <Label Content="Enter your current password" Foreground="LightGray" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Margin="580,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160">
+            <TextBox.Style>
+                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <Style.Resources>
+                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                            <VisualBrush.Visual>
+                                <Label Content="Enter new password" Foreground="LightGray" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Margin="567,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160">
+            <TextBox.Style>
+                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <Style.Resources>
+                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                            <VisualBrush.Visual>
+                                <Label Content="Confirm new password" Foreground="LightGray" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Button x:Name="btnChangePassword" Content="Change" HorizontalAlignment="Left" Margin="603,241,0,0" VerticalAlignment="Top" Width="60" Height="30" Click="btnChangePassword_Click"/>
+        <Label x:Name="lbPasswordError" Content="Current password error" HorizontalAlignment="Left" Margin="573,104,0,0" VerticalAlignment="Top" Width="182" Background="{x:Null}" Foreground="Red" FontWeight="Bold"/>
+        <Label x:Name="lbNewPassword" Content="New password error" HorizontalAlignment="Left" Margin="558,158,0,0" VerticalAlignment="Top" Width="182" Foreground="Red" Background="{x:Null}" FontWeight="Bold"/>
+        <Label Content="Confirm password error" HorizontalAlignment="Left" Margin="547,208,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}" Foreground="Red" FontWeight="Bold"/>
+        <Label x:Name="lbFullNameError" Content="Fullname error" HorizontalAlignment="Left" Margin="210,158,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
+        <Label x:Name="lbMailError" Content="Mail error" HorizontalAlignment="Left" Margin="210,204,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
+        <Label x:Name="lbPhoneError" Content="Phone error" HorizontalAlignment="Left" Margin="210,253,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
+        <Label x:Name="lbAddressError" Content="Address error" HorizontalAlignment="Left" Margin="210,375,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" FontWeight="Bold" Width="170"/>
+        <Label x:Name="lbSaveNotify" Content="Save success notification" HorizontalAlignment="Left" Margin="272,32,0,0" VerticalAlignment="Top" Width="141" Background="{x:Null}" Foreground="#FF08F900" FontWeight="Normal"/>
+        <Label x:Name="lbChangeNotify" Content="Change success notification" HorizontalAlignment="Left" Margin="613,32,0,0" VerticalAlignment="Top" Width="157" Background="{x:Null}" Foreground="#FF08F900" FontWeight="Normal"/>
 
     </Grid>
 </Window>
