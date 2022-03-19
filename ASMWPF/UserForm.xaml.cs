@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ASMLibrary.DataAccess;
+using ASMLibrary.Management.Sevice;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,16 +21,27 @@ namespace ASMWPF
     /// </summary>
     public partial class UserForm : Window
     {
-        public UserForm()
+        private KhachHangSevice khachHangSevice = new KhachHangSevice();
+        public KhachHang khachHang;
+        public UserForm(KhachHang khach)
         {
             InitializeComponent();
+            khachHang = khach;
+            loaddata();
         }
 
+        public void loaddata()
+        {
+            lbUserName.Content = khachHang.Username;
+            txtMail.Text = khachHang.MailKh;
+            txtPhone.Text = khachHang.Sdtkh;
+            txtAddress.Text = khachHang.DiachiKh;
+        }
 
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            HomePageForm home = new HomePageForm();
+            HomePageForm home = new HomePageForm(khachHang);
             home.Show();
             this.Close();
         }
@@ -42,6 +55,30 @@ namespace ASMWPF
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            khachHang.MailKh = txtMail.Text.ToString();
+            khachHang.Sdtkh = txtPhone.Text.ToString();
+            khachHang.DiachiKh = txtAddress.Text.ToString();
+
+            MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure?", "Save Info Confirmation", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    khachHangSevice.UpdateKhachHang(khachHang);
+                    MessageBox.Show("Update Info Success!!");
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
+        }
+
+        void CheckText()
+        {
+
         }
 
         private void btnChangePassword_Click(object sender, RoutedEventArgs e)

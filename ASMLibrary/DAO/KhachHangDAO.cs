@@ -79,6 +79,20 @@ namespace ASMLibrary.DAO
             }
             return khachHang;
         }
+        public KhachHang CheckUserName(string username)
+        {
+            KhachHang khachHang = null;
+            try
+            {
+                var ASMFDB = new ASMFContext();
+                khachHang = ASMFDB.KhachHangs.SingleOrDefault(m => m.Username.Equals(username));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return khachHang;
+        }
         public KhachHang CheckLogin(string username, string password)
         {
             KhachHang khachHang = null;

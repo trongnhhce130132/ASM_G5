@@ -23,7 +23,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ListView x:Name="lvMostOrdered" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="708" Margin="62,58,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+        <ListView x:Name="lvMostOrdered" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="708" Margin="62,58,0,0" Background="{x:Null}" BorderBrush="{x:Null}" MouseDoubleClick="lvMostOrdered_MouseDoubleClick">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3" />
@@ -32,9 +32,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
-                        <Image Source="{Binding ImageData}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-                        <Button x:Name="btn" Content="{Binding id}" Height="30" />
+                        <Image Source="{Binding ImageData}" Width="200" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -54,7 +52,7 @@
             </Button.Template>
         </Button>
         <Label Content="Most ordered:" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
-        <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="703" Margin="62,213,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+        <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="703" Margin="62,213,0,0" Background="{x:Null}" BorderBrush="{x:Null}" MouseDoubleClick="lvMenu_MouseDoubleClick">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3" />
@@ -63,15 +61,31 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
-                        <Image Source="{Binding ImageData}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <Image Source="{Binding ImageData}" Width="200" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-                        <Button x:Name="btn" Content="{Binding id}" Height="30" />
+                        <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <Label Content="Menu:" HorizontalAlignment="Left" Margin="67,179,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
         <Rectangle HorizontalAlignment="Left" Height="4" Margin="62,175,0,0" VerticalAlignment="Top" Width="890" Grid.ColumnSpan="2" Fill="#FFD8D8D8"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="462,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" Background="#FFF7F3F3" Height="32" RenderTransformOrigin="0.488,0.47" TextChanged="txtSearch_TextChanged" >
+            <TextBox.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.OpacityMask>
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>

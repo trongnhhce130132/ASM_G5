@@ -40,7 +40,7 @@ namespace ASMWPF
                 khach.HotenKh = txtFullname.Text;
                 khach.MailKh = txtEmail.Text;
                 khach.Sdtkh = txtPhone.Text;
-                khach.DiachiKh = txtPhone.Text;
+                khach.DiachiKh = txtAddress.Text;
                 khach.Role = "User";
                 khach.Tt = 1;
 
