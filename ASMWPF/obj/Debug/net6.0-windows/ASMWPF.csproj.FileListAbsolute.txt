@@ -283,3 +283,5 @@ C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-wi
 C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\Menu.baml
 C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\MenuPage.baml
 C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\AdminUpdateForm.g.cs
+C:\FPT University\MAIN SUBJECT\PRN221\PROJECT\ASM_FIX\ASMWPF\obj\Debug\net6.0-windows\AdminUpdateForm.baml
