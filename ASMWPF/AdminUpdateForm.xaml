@@ -5,30 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASMWPF"
         mc:Ignorable="d"
-        Title="AdminUpdateForm" Height="473" Width="528" ResizeMode="NoResize"
+        Title="AdminUpdateForm" Height="388" Width="528" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,0,4">
+    <Grid Margin="0,0,0,-6">
         <Label Content="Name" HorizontalAlignment="Left" Margin="40,30,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Category" HorizontalAlignment="Left" Margin="40,80,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="40,130,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Note" HorizontalAlignment="Left" Margin="40,180,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Status" HorizontalAlignment="Left" Margin="40,230,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Image" HorizontalAlignment="Left" Margin="40,280,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Status" HorizontalAlignment="Left" Margin="40,350,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Image" HorizontalAlignment="Left" Margin="40,234,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <TextBox x:Name="tbFoodName" HorizontalAlignment="Left" Margin="186,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="16" FontWeight="Bold"/>
-        <ComboBox HorizontalAlignment="Left" Margin="186,85,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbbloai" HorizontalAlignment="Left" Margin="186,85,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="tbPrice" HorizontalAlignment="Left" Margin="186,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="16" FontWeight="Bold"/>
         <TextBox x:Name="tbNote" HorizontalAlignment="Left" Margin="186,185,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="16" FontWeight="Bold" Height="26"/>
-        <TextBox x:Name="tbStatus" HorizontalAlignment="Left" Margin="186,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontSize="16" FontWeight="Bold"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="216,393,0,0" VerticalAlignment="Top" Height="38" Width="138" FontSize="16" FontWeight="Bold" BorderBrush="White" Background="White" Click="btnUpdate_Click"/>
-        <Label x:Name="lbNameError" Content="Name error" HorizontalAlignment="Left" Margin="186,55,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
-        <Label x:Name="lbPriceError" Content="Price error" HorizontalAlignment="Left" Margin="186,155,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
-        <Label x:Name="lbNoteError" Content="Note error" HorizontalAlignment="Left" Margin="186,205,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
-        <Label x:Name="lbStatusError" Content="Status error" HorizontalAlignment="Left" Margin="186,255,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
-        <Button Content="image..." Name="btnOpenFile" Click="btnOpenFile_Click" HorizontalAlignment="Left" Margin="186,320,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label x:Name="lbImg" Content="Link img display here" HorizontalAlignment="Left" Margin="186,285,0,0" VerticalAlignment="Top" Width="337"/>
-        <RadioButton Content="Active" GroupName="Status" HorizontalAlignment="Left" Margin="165,359,0,0" Height="18" VerticalAlignment="Top"/>
-        <RadioButton Content="Disactive" GroupName="Status" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,359,0,0" Height="18"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="186,299,0,0" VerticalAlignment="Top" Height="38" Width="138" FontSize="16" FontWeight="Bold" BorderBrush="White" Background="White" Click="btnUpdate_Click"/>
+        <Label x:Name="lbNameError" Content="" HorizontalAlignment="Left" Margin="186,55,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="lbPriceError" Content="" HorizontalAlignment="Left" Margin="186,155,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="lbNoteError" Content="" HorizontalAlignment="Left" Margin="186,205,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+        <Button Content="image..." Name="btnOpenFile" Click="btnOpenFile_Click" HorizontalAlignment="Left" Margin="186,274,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label x:Name="lbImg" Content="" HorizontalAlignment="Left" Margin="186,239,0,0" VerticalAlignment="Top" Width="337"/>
+        <Button x:Name="btnback" Content="" Margin="10,10,0,0" Foreground="White" BorderBrush="Black" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="34" Click="btnback_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/images/arrow.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Content="Update info food" HorizontalAlignment="Center" Margin="0,-8,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
 
     </Grid>
 </Window>

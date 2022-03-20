@@ -41,11 +41,16 @@ namespace ASMWPF
             List<CartData> carts = new List<CartData>();
             foreach(GioHang g in gioHangs)
             {
-                carts.Add(new CartData { Id = g.Idmon, Name=monAnService.GetMonAnByID(g.Idmon).TenMon , Soluong=g.SoLuong, Price =  (int)g.DonGia+"VND" });
+                MonAn mon = monAnService.GetMonAnByID(g.Idmon);
+                carts.Add(new CartData { Id = g.IdgioHang, Name= mon.TenMon , Soluong=  g.SoLuong, Price =  (int)g.DonGia+"VND", ImageData = LoadImage(mon.Hinh) });
                 gia += g.DonGia*g.SoLuong;
             }
             lvCart.ItemsSource = carts;
             lbgia.Content =(int)gia+"VND";
+        }
+        private BitmapImage LoadImage(string filename)
+        {
+            return new BitmapImage(new Uri(filename));
         }
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
@@ -73,24 +78,16 @@ namespace ASMWPF
         {
             if (lvCart.SelectedIndex != -1)
             {
-                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure?", "Delete food Confirmation", MessageBoxButton.YesNo);
+                MessageBoxResult messageBoxResult = MessageBox.Show("Do you want to Update quantity?", "Cart food Confirmation", MessageBoxButton.YesNo);
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
-                    try
-                    {
-                        GioHang gio = gioHangs[lvCart.SelectedIndex];
 
-                        gioHangService.DeleteGioHang(gio);
-                        Loaddata();
-                        MessageBox.Show("Delete Info Success!!");
-                    }
-                    catch (Exception)
-                    {
-
-                        throw;
-                    }
-
+                    GioHang gio = gioHangs[lvCart.SelectedIndex];
+                    DetailsForm detailsForm = new DetailsForm(monAnService.GetMonAnByID(gio.Idmon), khachHang, gio);
+                    detailsForm.Show();
+                    this.Close();
                 }
+               
             }
         }
 
@@ -129,6 +126,35 @@ namespace ASMWPF
 
             }
         }
+
+        private void btndelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure?", "Delete food Confirmation", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    var rowItem = (sender as Button).DataContext as CartData;
+                   // MessageBox.Show(rowItem.Id);
+                    GioHang gio = gioHangService.GetGioHangByID(rowItem.Id);
+
+                    gioHangService.DeleteGioHang(gio);
+                    Loaddata();
+                    MessageBox.Show("Delete Info Success!!");
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
+        }
+
+        private void lvCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 
     public class CartData
@@ -158,6 +184,12 @@ namespace ASMWPF
         {
             get { return _Price; }
             set { _Price = value; }
+        }
+        private BitmapImage _ImageData;
+        public BitmapImage ImageData
+        {
+            get { return this._ImageData; }
+            set { this._ImageData = value; }
         }
     }
 }

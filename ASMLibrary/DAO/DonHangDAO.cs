@@ -17,7 +17,8 @@ namespace ASMLibrary.DAO
             try
             {
                 var ASMFDB = new ASMFContext();
-                donHangs = ASMFDB.DonHangs.ToList();
+                var temp = from i in ASMFDB.DonHangs where i.Tt == 1 select i;
+                donHangs = temp.ToList();
 
             }
             catch (Exception ex)
@@ -32,6 +33,7 @@ namespace ASMLibrary.DAO
             try
             {
                 var ASMFDB = new ASMFContext();
+                
                 donHangs = ASMFDB.DonHangs.Where(g => g.Idkh.Equals(id)).ToList();
 
             }

@@ -24,11 +24,13 @@ namespace ASMWPF
         private GioHangService GioHangService = new GioHangService();
         public KhachHang khachHang;
         public MonAn monAn;
-        public DetailsForm(MonAn monan, KhachHang khach)
+        public GioHang checkupdate;
+        public DetailsForm(MonAn monan, KhachHang khach, GioHang gio)
         {
             InitializeComponent();
             monAn = monan;
             khachHang = khach;
+            checkupdate = gio;
             loaddata();
         }
         public void loaddata()
@@ -40,14 +42,29 @@ namespace ASMWPF
                 lbPrice.Content = "Giá: " + monAn.DonGia.ToString();
                 Uri fileUri = new Uri(monAn.Hinh);
                 imgdetail.Source = new BitmapImage(fileUri);
+                if (checkupdate != null)
+                {
+                    txtSL.Text = "" + checkupdate.SoLuong;
+                    btnadd.Content = "Update";
+                }
             }
         }
 
         private void btnback_Click(object sender, RoutedEventArgs e)
         {
-            HomePageForm homePage = new HomePageForm(khachHang);
-            homePage.Show();
-            this.Close();
+            if (checkupdate != null)
+            {
+                CartForm cartForm = new CartForm(khachHang);
+                cartForm.Show();
+                this.Close();
+            }
+            else
+            {
+                HomePageForm homePage = new HomePageForm(khachHang);
+                homePage.Show();
+                this.Close();
+            }
+
         }
 
         private void btndown_Click(object sender, RoutedEventArgs e)
@@ -60,33 +77,57 @@ namespace ASMWPF
 
         private void btnadd_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (btnadd.Content.Equals("Add to cart"))
             {
-                GioHang gio = GioHangService.GetGioHangList().FirstOrDefault(g => g.Idkh.Equals(khachHang.Idkh) && g.Idmon.Equals(monAn.Idmon));
-                if (gio != null)
+                try
                 {
-                    gio.SoLuong = gio.SoLuong + Convert.ToInt32(txtSL.Text);
-                    GioHangService.UpdateGioHang(gio);
-                }
-                else
-                {
-
-                    GioHang gioHang = new GioHang()
+                    GioHang gio = GioHangService.GetGioHangList().FirstOrDefault(g => g.Idkh.Equals(khachHang.Idkh) && g.Idmon.Equals(monAn.Idmon));
+                    if (gio != null)
                     {
-                        IdgioHang = GioHangService.GetIDCuoi(),
-                        Idkh = khachHang.Idkh,
-                        Idmon = monAn.Idmon,
-                        DonGia = monAn.DonGia,
-                        SoLuong = Convert.ToInt32(txtSL.Text)
-                    };
+                        gio.SoLuong = gio.SoLuong + Convert.ToInt32(txtSL.Text);
+                        GioHangService.UpdateGioHang(gio);
+                    }
+                    else
+                    {
 
-                    GioHangService.AddGioHang(gioHang);
+                        GioHang gioHang = new GioHang()
+                        {
+                            IdgioHang = GioHangService.GetIDCuoi(),
+                            Idkh = khachHang.Idkh,
+                            Idmon = monAn.Idmon,
+                            DonGia = monAn.DonGia,
+                            SoLuong = Convert.ToInt32(txtSL.Text)
+                        };
+
+                        GioHangService.AddGioHang(gioHang);
+                    }
+                    MessageBox.Show("Add to cart success!!");
                 }
-                MessageBox.Show("Add to cart success!!");
-            }
-            catch (Exception ex)
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }else if (btnadd.Content.Equals("Update"))
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    GioHang gio = GioHangService.GetGioHangList().FirstOrDefault(g => g.Idkh.Equals(khachHang.Idkh) && g.Idmon.Equals(monAn.Idmon));
+                    if (gio != null)
+                    {
+                        gio.SoLuong = Convert.ToInt32(txtSL.Text);
+                        GioHangService.UpdateGioHang(gio);
+                        MessageBox.Show("Update quantity of cart success!!");
+                    }
+                    CartForm cartForm = new CartForm(khachHang);
+                    cartForm.Show();
+                    this.Close();
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

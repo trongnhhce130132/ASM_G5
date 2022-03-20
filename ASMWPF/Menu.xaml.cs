@@ -30,13 +30,13 @@ namespace ASMWPF
 
         public List<MenuItem> GetItems()
         {
-            var mon = monAnService.GetMonAns().ToList();
-            foreach(var item in mon)
-            {
-                menuItem.Add(new MenuItem{ Id = item.Idmon, Title = item.TenMon, Price = item.DonGia, ImageData = LoadImage(@item.Hinh) });
-                menuItem.Add(new MenuItem { Id = "s", Title = "aa", Price = 2000, ImageData = LoadImage(@"D:\anh.png") });
+            //var mon = monAnService.GetMonAns().ToList();
+            //foreach(var item in mon)
+            //{
+            //    menuItem.Add(new MenuItem{ Id = item.Idmon, Title = item.TenMon, Price = item.DonGia, ImageData = LoadImage(@item.Hinh) });
+            //    menuItem.Add(new MenuItem { Id = "s", Title = "aa", Price = 2000, ImageData = LoadImage(@"D:\anh.png") });
 
-            }
+            //}
             return menuItem;
         }
        

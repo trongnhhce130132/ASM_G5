@@ -23,6 +23,10 @@ namespace ASMWPF
     {
         MonAnService monAnService = new MonAnService();
         List<MonAn> monAnList;
+        List<MonAn> monchinhList;
+        List<MonAn> monnuocList;
+        List<MonAn> montmList;
+
         KhachHang khachHang;
         public HomePageForm(KhachHang khach)
         {
@@ -35,6 +39,9 @@ namespace ASMWPF
 
             
             monAnList = monAnService.GetMonAns().ToList();
+            monchinhList = monAnService.GetMonAnByloai("L0001").ToList();
+            monnuocList = monAnService.GetMonAnByloai("l0002").ToList();
+            montmList = monAnService.GetMonAnByloai("L0003").ToList();
             List<FoodData> foods = new List<FoodData>();
             List<FoodData> foodsMost = new List<FoodData>();
 
@@ -47,7 +54,23 @@ namespace ASMWPF
                 foodsMost.Add(new FoodData { Id = monAnList[i].Idmon, Price = "Giá :" + monAnList[i].DonGia, Title = monAnList[i].TenMon, ImageData = LoadImage(monAnList[i].Hinh) });
             }
             this.lvMostOrdered.ItemsSource = foodsMost;
+            this.lvMenuMonchinh.ItemsSource = menuloai(monchinhList);
+            this.lvMenuNuoc.ItemsSource = menuloai(monnuocList);
+            this.lvMenuTrangMieng.ItemsSource = menuloai(montmList);
+
             this.lvMenu.ItemsSource = foods;
+        }
+        List<FoodData> menuloai(List<MonAn> monAns)
+        {
+            List<FoodData> foods = new List<FoodData>();
+          
+
+            foreach (MonAn mon in monAns)
+            {
+                foods.Add(new FoodData { Id = mon.Idmon, Price = "Giá :" + mon.DonGia, Title = mon.TenMon, ImageData = LoadImage(mon.Hinh) });
+            }
+            
+            return foods;
         }
 
         // for this code image needs to be a project resource
@@ -81,8 +104,8 @@ namespace ASMWPF
         {
             if (lvMostOrdered.SelectedIndex != -1)
             {
-                DetailsForm detailsForm = new DetailsForm(monAnList[lvMostOrdered.SelectedIndex], khachHang);
-                //    detailsForm.monAn = monAnList[lvMenu.SelectedIndex];
+                GioHang gio = null;
+                DetailsForm detailsForm = new DetailsForm(monAnList[lvMostOrdered.SelectedIndex], khachHang,gio);
                 detailsForm.Show();
                 this.Close();
             }
@@ -92,8 +115,9 @@ namespace ASMWPF
         {
             if (lvMenu.SelectedIndex != -1)
             {
-                DetailsForm detailsForm = new DetailsForm(monAnList[lvMenu.SelectedIndex], khachHang);
-                //    detailsForm.monAn = monAnList[lvMenu.SelectedIndex];
+               
+                GioHang gio = null;
+                DetailsForm detailsForm = new DetailsForm(monAnList[lvMenu.SelectedIndex], khachHang, gio);
                 detailsForm.Show();
                 this.Close();
             }
@@ -107,7 +131,44 @@ namespace ASMWPF
             {
                 foods.Add(new FoodData { Id = mon.Idmon, Price = "Giá :" + mon.DonGia, Title = mon.TenMon, ImageData = LoadImage(mon.Hinh) });
             }
+            tctmenu.SelectedIndex = 0;
             this.lvMenu.ItemsSource = foods;
+        }
+
+        private void lvMenuMonChinh_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (lvMenuMonchinh.SelectedIndex != -1)
+            {
+
+                GioHang gio = null;
+                DetailsForm detailsForm = new DetailsForm(monchinhList[lvMenuMonchinh.SelectedIndex], khachHang, gio);
+                detailsForm.Show();
+                this.Close();
+            }
+        }
+
+        private void lvMenuNuoc_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (lvMenuNuoc.SelectedIndex != -1)
+            {
+
+                GioHang gio = null;
+                DetailsForm detailsForm = new DetailsForm(monnuocList[lvMenuNuoc.SelectedIndex], khachHang, gio);
+                detailsForm.Show();
+                this.Close();
+            }
+        }
+
+        private void lvMenuTrangMieng_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (lvMenuTrangMieng.SelectedIndex != -1)
+            {
+
+                GioHang gio = null;
+                DetailsForm detailsForm = new DetailsForm(montmList[lvMenuTrangMieng.SelectedIndex], khachHang, gio);
+                detailsForm.Show();
+                this.Close();
+            }
         }
     }
     public class FoodData

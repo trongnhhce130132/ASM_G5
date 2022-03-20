@@ -17,7 +17,8 @@ namespace ASMLibrary.DAO
             try
             {
                 var ASMFDB = new ASMFContext();
-                khachHangs = ASMFDB.KhachHangs.ToList();
+                var temp = from i in ASMFDB.KhachHangs where i.Tt == 1 select i;
+                khachHangs = temp.ToList();
 
             }
             catch (Exception ex)
@@ -56,7 +57,8 @@ namespace ASMLibrary.DAO
             try
             {
                 var ASMFDB = new ASMFContext();
-                khachHangs = ASMFDB.KhachHangs.Where(k => k.HotenKh.Contains(Name)).ToList();
+                var temp = from i in ASMFDB.KhachHangs where i.Tt == 1 select i;
+                khachHangs = temp.Where(k => k.HotenKh.Contains(Name)).ToList();
 
             }
             catch (Exception ex)
@@ -157,10 +159,12 @@ namespace ASMLibrary.DAO
             try
             {
                 KhachHang _khachHang = GetKhachHangByID(khachHang.Idkh);
+
                 if (_khachHang != null)
                 {
+                    khachHang.Tt = 0;
                     var ASMFDB = new ASMFContext();
-                    ASMFDB.KhachHangs.Remove(khachHang);
+                    ASMFDB.Entry<KhachHang>(khachHang).State = EntityState.Modified;
                     ASMFDB.SaveChanges();
                 }
                 else

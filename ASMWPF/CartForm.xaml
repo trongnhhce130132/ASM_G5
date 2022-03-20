@@ -38,19 +38,23 @@
             </Button.Template>
         </Button>
         <Label Content="Cart information" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
-        <ListView x:Name="lvCart" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="67,61,0,57" MouseDoubleClick="lvCart_MouseDoubleClick">
-            <ListView.View>
-                <GridView>
-
-                    <!--<GridViewColumn Header="Hình">
-                        <Image Source="D:\anh.png" Width="30" Height="30" Margin="0,0,5,0" />
-                    </GridViewColumn>-->
-                    <GridViewColumn Header="Name Food" Width="300" DisplayMemberBinding="{Binding Path=Name }"/>
-                    <GridViewColumn Header="Quantity" Width="200" DisplayMemberBinding="{Binding Path=Soluong}"/>
-                    <GridViewColumn Header="Price" Width="200" DisplayMemberBinding="{Binding Path=Price, StringFormat={}{0:N1}}"/>
-
-                </GridView>
-            </ListView.View>
+        <ListView x:Name="lvCart" d:ItemsSource="{d:SampleData ItemCount=1}" Margin="67,61,0,57" MouseDoubleClick="lvCart_MouseDoubleClick">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="1" VerticalAlignment="Top"  />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <UniformGrid Columns="5" Width="701" >
+                        <Image Source="{Binding ImageData}" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Soluong}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Button x:Name="btndelete" Content="Delete" Width="100" Height="30" Click="btndelete_Click"/>
+                    </UniformGrid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <Button x:Name="btnOrder" Content="Order" HorizontalAlignment="Left" Margin="480,0,0,15" VerticalAlignment="Bottom" Width="88" Height="25" FontWeight="Bold" FontSize="14" Click="btnOrder_Click" />
         <!--<Button Content="Order" HorizontalAlignment="Left" Margin="480,418,0,0" VerticalAlignment="Top" Height="38" Width="84" FontWeight="Bold" FontSize="14"/>-->

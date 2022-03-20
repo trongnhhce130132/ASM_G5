@@ -11,7 +11,7 @@
         <TabControl>
             <TabItem Header="Items" Margin="-2,-2,-35,-15">
                 <Grid Background="White" Height="368">
-                    <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,-13">
+                    <ListView x:Name="lvMenu" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,-13">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <UniformGrid Columns="3" />
@@ -24,14 +24,14 @@
                                     <TextBlock x:Name="tbName" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Red" FontWeight="Bold" FontSize="14"/>
                                     <TextBlock x:Name="tbPrice" Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Red" FontWeight="Bold" FontSize="14"/>
                                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                                        <Button x:Name="btnEdit" Content="{Binding Edit}" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25,0,0,0" Click="btnEdit_Click">
+                                        <Button x:Name="btnEdit" Content="{Binding Id}" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25,0,0,0" Click="btnEdit_Click">
                                             <Button.Template>
                                                 <ControlTemplate>
                                                     <Image Source="/images/edit.png"/>
                                                 </ControlTemplate>
                                             </Button.Template>
                                         </Button>
-                                        <Button x:Name="btnDelete" Content="{Binding Delete}" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" >
+                                        <Button x:Name="btnDelete" Content="{Binding Id}" Height="25" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" Click="btnDelete_Click" >
                                             <Button.Template>
                                                 <ControlTemplate>
                                                     <Image Source="/images/delete.png"/>
@@ -51,47 +51,60 @@
                     <Label Content="Category" HorizontalAlignment="Left" Margin="40,80,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                     <Label Content="Price" HorizontalAlignment="Left" Margin="40,130,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                     <Label Content="Note" HorizontalAlignment="Left" Margin="40,180,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Status" HorizontalAlignment="Left" Margin="40,230,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Image" HorizontalAlignment="Left" Margin="40,280,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Status" HorizontalAlignment="Left" Margin="40,330,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <Label Content="Image" HorizontalAlignment="Left" Margin="40,248,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                     <TextBox x:Name="tbFoodName" HorizontalAlignment="Left" Margin="186,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="16" FontWeight="Bold"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="186,85,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox  x:Name="cbbLoai" SelectedValue="{Binding Path=TenLoai}"  HorizontalAlignment="Left" Margin="186,85,0,0" VerticalAlignment="Top" Width="120"/>
                     <TextBox x:Name="tbPrice" HorizontalAlignment="Left" Margin="186,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="16" FontWeight="Bold"/>
                     <TextBox x:Name="tbNote" HorizontalAlignment="Left" Margin="186,185,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="16" FontWeight="Bold" Height="42"/>
-                    <TextBox x:Name="tbStatus" HorizontalAlignment="Left" Margin="186,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="16" FontWeight="Bold"/>
-                    <RadioButton Content="Active" IsChecked="True" GroupName="Status" HorizontalAlignment="Left" Margin="165,339,0,0" Height="18" VerticalAlignment="Top"/>
-                    <RadioButton Content="Disactive" GroupName="Status" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,339,0,0" Height="18"/>
-                    <Label x:Name="lbNameError" Content="Name error" HorizontalAlignment="Left" Margin="555,35,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
-                    <Label x:Name="lbPriceError" Content="Price error" HorizontalAlignment="Left" Margin="555,135,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
-                    <Label x:Name="lbNoteError" Content="Note error" HorizontalAlignment="Left" Margin="555,185,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
-                    <Label x:Name="lbStatusError" Content="Status error" HorizontalAlignment="Left" Margin="555,235,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
-                    <Button Content="image..." Name="btnOpenFile" Click="btnOpenFile_Click" HorizontalAlignment="Left" Margin="528,288,0,0" VerticalAlignment="Top" Width="60"/>
-                    <Label x:Name="lbImg" Content="Link img display here" HorizontalAlignment="Left" Margin="186,285,0,0" VerticalAlignment="Top" Width="337"/>
-                    <Button Content="Create" HorizontalAlignment="Left" Margin="292,361,0,0" VerticalAlignment="Top" Height="38" Width="138" FontSize="16" FontWeight="Bold" BorderBrush="White" Background="White"/>
+                    <Label x:Name="lbNameError" Content="" HorizontalAlignment="Left" Margin="555,35,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+                    <Label x:Name="lbPriceError" Content="" HorizontalAlignment="Left" Margin="555,135,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+                    <Label x:Name="lbNoteError" Content="" HorizontalAlignment="Left" Margin="555,185,0,0" VerticalAlignment="Top" Width="111" Background="{x:Null}" Foreground="Red" FontWeight="Bold" FontSize="14"/>
+                    <Button Content="image..." Name="btnOpenFile" Click="btnOpenFile_Click" HorizontalAlignment="Left" Margin="528,255,0,0" VerticalAlignment="Top" Width="60"/>
+                    <Label x:Name="lbImg" Content="Link img display here" HorizontalAlignment="Left" Margin="186,252,0,0" VerticalAlignment="Top" Width="337"/>
+                    <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="286,329,0,0" VerticalAlignment="Top" Height="38" Width="138" FontSize="16" FontWeight="Bold" BorderBrush="White" Background="White" Click="btnCreate_Click" RenderTransformOrigin="0.435,-1.366"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Account" Margin="71,-2,-108,-14">
                 <Grid Background="#FFE5E5E5" Margin="0,11,0,0">
-                    <Button x:Name="btnExportAccount" Content="" Margin="621,6,0,0" Foreground="White" BorderBrush="Black" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Width="34">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="37*"/>
+                        <ColumnDefinition Width="639*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnExportAccount" Content="" Margin="584,6,0,0" Foreground="White" BorderBrush="Black" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Width="34" Grid.Column="1">
                         <Button.Template>
                             <ControlTemplate>
                                 <Image Source="/images/export.png"/>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button x:Name="btnRefreshAccount" Content="" Margin="557,10,0,0" Foreground="White" BorderBrush="Black" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33">
+                    <Button x:Name="btnRefreshAccount" Content="" Margin="520,10,0,0" Foreground="White" BorderBrush="Black" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33" Grid.Column="1">
                         <Button.Template>
                             <ControlTemplate>
                                 <Image Source="/images/refresh.png"/>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <ListView x:Name="lvAccount" d:ItemsSource="{d:SampleData ItemCount=5}" Height="371" Margin="0,54,0,10">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
+                    <ListView x:Name="lvAccount" d:ItemsSource="{d:SampleData ItemCount=5}" Height="371" Margin="0,54,0,-1" Grid.ColumnSpan="2">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="1" VerticalAlignment="Top"  />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <UniformGrid Columns="7" Width="670" >
+                                    <TextBlock Text="{Binding Username}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <!--<TextBlock Text="{Binding Password}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                                    <TextBlock Text="{Binding HotenKh}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding DiachiKh}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Sdtkh}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding MailKh}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Button x:Name="btnUpdateAcc"  Content="Update" Width="100" Height="30" Click="btnUpdateAcc_Click"/>
+                                    <Button x:Name="btndeleteAcc"  Content="Delete" Width="100" Height="30" Click="btndeleteAcc_Click"/>
+
+                                </UniformGrid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </Grid>
             </TabItem>
@@ -112,11 +125,26 @@
                         </Button.Template>
                     </Button>
                     <ListView x:Name="lvOrder" d:ItemsSource="{d:SampleData ItemCount=5}" Height="371" Margin="0,54,0,10">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="1" VerticalAlignment="Top"  />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <UniformGrid Columns="7" Width="670" >
+                                    <TextBlock Text="{Binding IddonHang}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Diachi}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Sdt}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding ThoiGian}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding TongTien}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                   
+                                    <Button x:Name="btndeleteAcc"  Content="Delete" Width="100" Height="30" Click="btndeleteAcc_Click"/>
+
+                                </UniformGrid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </Grid>
             </TabItem>

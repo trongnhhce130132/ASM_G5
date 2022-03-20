@@ -20,8 +20,10 @@ namespace ASMLibrary.DAO
             List<MonAn> monAns;
             try
             {
+               
                 var ASMFDB = new ASMFContext();
-                monAns = ASMFDB.MonAns.ToList();
+                var temp = from i in ASMFDB.MonAns where i.Tt == 1 select i;
+                monAns = temp.ToList();
 
             }catch (Exception ex)
             {
@@ -41,8 +43,8 @@ namespace ASMLibrary.DAO
                 {
                     return "M0001";
                 }
-               // string iDCuoi = monAns.Last().Idmon;
-                string iDCuoi = "M0009";
+                string iDCuoi = monAns.Last().Idmon;
+                
 
                 return $"M{int.Parse(iDCuoi.Substring(1)) + 1:000#}";
 
@@ -59,7 +61,23 @@ namespace ASMLibrary.DAO
             try
             {
                 var ASMFDB = new ASMFContext();
-                monAns = ASMFDB.MonAns.Where(m => m.TenMon.Contains(name)).ToList();
+                var temp = from i in ASMFDB.MonAns where i.Tt == 1 select i;
+                monAns = temp.Where(m => m.TenMon.Contains(name)).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return monAns;
+        }
+        public IEnumerable<MonAn> GetMonAnByloai(String loai)
+        {
+            List<MonAn> monAns;
+            try
+            {
+                var ASMFDB = new ASMFContext();
+                monAns = ASMFDB.MonAns.Where(m => m.Idloai.Equals(loai)).Select((MonAn i) => i).ToList();
 
             }
             catch (Exception ex)
@@ -81,6 +99,7 @@ namespace ASMLibrary.DAO
             }
             return monAn;
         }
+       
 
         public void AddMonAn(MonAn monAn)
         {
@@ -133,8 +152,9 @@ namespace ASMLibrary.DAO
                 MonAn _monAn = GetMonAnByID(monAn.Idmon);
                 if (_monAn != null)
                 {
+                    monAn.Tt = 0;
                     var ASMFDB = new ASMFContext();
-                    ASMFDB.MonAns.Remove(monAn);
+                    ASMFDB.Entry<MonAn>(monAn).State = EntityState.Modified;
                     ASMFDB.SaveChanges();
                 }
                 else
