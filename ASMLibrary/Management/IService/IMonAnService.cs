@@ -9,6 +9,7 @@ namespace ASMLibrary.Management.IService
 {
     public interface IMonAnService
     {
+        IEnumerable<MonAn> GetMonAnByloai(String loai);
         IEnumerable<MonAn> GetMonAns();
         IEnumerable<MonAn> SearchMonAnByName(String name);
         String GetIDCuoi();

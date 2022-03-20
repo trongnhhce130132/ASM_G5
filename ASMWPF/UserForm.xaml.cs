@@ -64,7 +64,7 @@ namespace ASMWPF
                 khachHang.Sdtkh = txtPhone.Text.ToString();
                 khachHang.DiachiKh = txtAddress.Text.ToString();
 
-                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure?", "Save Info Confirmation", MessageBoxButton.YesNo);
+                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure?", "Update Info Confirmation", MessageBoxButton.YesNo);
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
                     try
@@ -94,17 +94,17 @@ namespace ASMWPF
                 lbFullNameError.Content = "FullName is null";
                 check = false;
             }
-            else if (!Regex.IsMatch(txtMail.Text, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
+            if (!Regex.IsMatch(txtMail.Text, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
             {
                 lbMailError.Content = "Email is Wrong format";
                 check = false;
             }
-            else if (!Regex.IsMatch(txtPhone.Text, @"^(\+84|0[3|5|7|8|9])+([0-9]{8})")) // [\+]?[0-9]{2}?[0-9]{9,10}
+             if (!Regex.IsMatch(txtPhone.Text, @"^(\+84|0[3|5|7|8|9])+([0-9]{8})")) // [\+]?[0-9]{2}?[0-9]{9,10}
             {
                 lbPhoneError.Content = "Phone is Wrong format";
                 check = false;
             }
-            else if (txtAddress.Text.Equals(""))
+             if (txtAddress.Text.Equals(""))
             {
                 lbAddressError.Content = "Address is null";
                 check = false;
@@ -117,11 +117,23 @@ namespace ASMWPF
         {
             bool check = true;
             lbPasswordError.Content = "";
-            lbNewPassword.Content = "";
-            lbConfirmPassError.Content = "";
-
-
-          
+            lbNewPasswordError.Content = "";
+            lbComfirmPassError.Content = "";
+            if (pbPassword.Password.ToString().Equals(khachHang.Password))
+            {
+                lbPasswordError.Content = "Password is Wrong!";
+                check = false;
+            }
+            if (!Regex.IsMatch(pbNewPassword.Password.ToString(), @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"))
+            {
+                lbNewPasswordError.Content = "pass is >8 and have char and number";
+                check = false;
+            }
+             if (pbNewPassword.Password.ToString() != pbConfirmPassword.Password.ToString())
+            {
+                lbComfirmPassError.Content = "Confirm pass not same";
+                check = false;
+            }
 
             return check;
         }
@@ -129,6 +141,26 @@ namespace ASMWPF
         private void btnChangePassword_Click(object sender, RoutedEventArgs e)
         {
 
+            if (Checktext())
+            {
+                khachHang.Password = pbNewPassword.Password.ToString();
+
+                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure?", "Change Password Confirmation", MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        khachHangSevice.UpdateKhachHang(khachHang);
+                        MessageBox.Show("Change Password Success!!", "Change Password Confirmation");
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+
+                }
+            }
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)

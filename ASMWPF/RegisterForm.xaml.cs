@@ -29,7 +29,7 @@ namespace ASMWPF
         {
             InitializeComponent();
         }
-         
+
         private KhachHang khachHang()
         {
             if (Checktext() == true)
@@ -56,10 +56,10 @@ namespace ASMWPF
                 lbRegisterNotify.Content = "UserName is null";
                 return false;
             }
-            else if (khachHangSevice.CheckUserName(txtUsername.Text)!=null)
+            else if (khachHangSevice.CheckUserName(txtUsername.Text) != null)
             {
                 lbRegisterNotify.Content = "UserName is Exist";
-              
+
                 return false;
             }
             else if (!Regex.IsMatch(txtPassword.Password.ToString(), @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"))
@@ -100,21 +100,23 @@ namespace ASMWPF
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-           
+
             if (Checktext())
             {
                 try
                 {
                     khachHangSevice.AddKhachHang(khachHang());
+
                     MessageBox.Show("add new");
+                    HomePageForm Home = new HomePageForm(khachHang());
+                    Home.Show();
+                    this.Close();
                 }
                 catch (Exception)
                 {
+
                 }
-                MonAnForm monAn = new MonAnForm();
-                monAn.khach = khach;
-                monAn.Show();
-                this.Close();
+
             }
 
         }

@@ -12,6 +12,7 @@ namespace ASMLibrary.Management.Sevice
     public class MonAnService : IMonAnService
     {
         MonAnDAO monAnDAO = new MonAnDAO();
+        public IEnumerable<MonAn> GetMonAnByloai(String loai) => monAnDAO.GetMonAnByloai(loai);
         public void AddMonAn(MonAn monAn) => monAnDAO.AddMonAn(monAn);
 
         public void DeleteMonAn(MonAn monAn) => monAnDAO.DeleteMonAn(monAn);

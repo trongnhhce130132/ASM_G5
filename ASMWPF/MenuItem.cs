@@ -10,24 +10,24 @@ namespace ASMWPF
     public class MenuItem
     {
         private string _Id;
-        private string? _Title;
-        private decimal? _Price;
+        private string? _Name;
+        private string? _Price;
         private BitmapImage _ImageData;
         public MenuItem() { 
         }
-        public MenuItem(string id, string? title, decimal? price, BitmapImage imageData)
+        public MenuItem(string id, string? name, string? price, BitmapImage imageData)
         {
             _Id = id;
-            _Title = title;
+            _Name = name;
             _Price = price;
             _ImageData = imageData;
         }
-        public string? Title
+        public string? Name
         {
-            get { return this._Title; }
-            set { this._Title = value; }
+            get { return this._Name; }
+            set { this._Name = value; }
         }
-        public decimal? Price
+        public string? Price
         {
             get { return this._Price; }
             set { this._Price = value; }

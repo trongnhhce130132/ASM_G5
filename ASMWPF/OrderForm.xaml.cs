@@ -25,6 +25,7 @@ namespace ASMWPF
         private MonAnService monAnService = new MonAnService();
         private ChiTietDonHangService chiTietDonHangService = new ChiTietDonHangService();
         private DonHangService donHangService = new DonHangService();
+        private GioHangService gioHangService = new GioHangService();
         public KhachHang khachHang;
         public DonHang donHang;
         decimal? gia = 0;
@@ -48,38 +49,24 @@ namespace ASMWPF
             List<CartData> carts = new List<CartData>();
             foreach (ChiTietDonHang g in chiTietDons)
             {
-                carts.Add(new CartData { Id = g.Idmon, Name = monAnService.GetMonAnByID(g.Idmon).TenMon, Soluong = g.SoLuong, Price = (int)g.DonGia + "VND" });
+                MonAn mon = monAnService.GetMonAnByID(g.Idmon);
+                carts.Add(new CartData { Id = g.Idctdh, Name = mon.TenMon, Soluong = g.SoLuong, Price = (int)g.DonGia + "VND" , ImageData = LoadImage(mon.Hinh)});
                 gia += g.DonGia * g.SoLuong;
             }
             lvOrder.ItemsSource = carts;
             lbgia.Content = (int)gia + "VND";
         }
 
-       
+        private BitmapImage LoadImage(string filename)
+        {
+            return new BitmapImage(new Uri(filename));
+        }
 
         private void lvOrder_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (lvOrder.SelectedIndex != -1)
             {
-                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure?", "Delete food Confirmation", MessageBoxButton.YesNo);
-                if (messageBoxResult == MessageBoxResult.Yes)
-                {
-                    try
-                    {
-                        ChiTietDonHang ctdon = chiTietDons[lvOrder.SelectedIndex];
-
-                        chiTietDonHangService.DeleteChiTietDonHang(ctdon);
-                       
-                        MessageBox.Show("Delete Info Success!!");
-                        Loaddata();
-                    }
-                    catch (Exception)
-                    {
-
-                        throw;
-                    }
-
-                }
+                
             }
         }
 
@@ -109,12 +96,54 @@ namespace ASMWPF
                     donHang.Tt = 1;
                     donHang.ThoiGian = now;
                     donHangService.UpdateDonHang(donHang);
-
+                    deleleGioHang();
                     MessageBox.Show("You onder Success!!");
 
                     HomePageForm homePageForm = new HomePageForm(khachHang);
                     homePageForm.Show();
                     this.Close();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
+        }
+
+        private void deleleGioHang()
+        {
+            try
+            {
+                List<GioHang> gios = gioHangService.GetGioHangByIDKhachHang(khachHang.Idkh).ToList();
+                foreach (GioHang hang in gios)
+                {
+                    gioHangService.DeleteGioHang(hang);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btndelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure?", "Delete food Confirmation", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    var rowItem = (sender as Button).DataContext as CartData;
+                  
+                    ChiTietDonHang ctdon = chiTietDonHangService.GetChiTietDonHangByID(rowItem.Id);
+
+                    chiTietDonHangService.DeleteChiTietDonHang(ctdon);
+
+                    MessageBox.Show("Delete Info Success!!");
+                    Loaddata();
                 }
                 catch (Exception)
                 {
@@ -158,6 +187,12 @@ namespace ASMWPF
         {
             get { return _Price; }
             set { _Price = value; }
+        }
+        private BitmapImage _ImageData;
+        public BitmapImage ImageData
+        {
+            get { return this._ImageData; }
+            set { this._ImageData = value; }
         }
     }
 }

@@ -52,25 +52,9 @@
             </Button.Template>
         </Button>
         <Label Content="Most ordered:" HorizontalAlignment="Left" Margin="67,22,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
-        <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="703" Margin="62,213,0,0" Background="{x:Null}" BorderBrush="{x:Null}" MouseDoubleClick="lvMenu_MouseDoubleClick">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="3" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
-                        <Image Source="{Binding ImageData}" Width="200" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-                        <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Label Content="Menu:" HorizontalAlignment="Left" Margin="67,179,0,0" VerticalAlignment="Top" Width="213" FontWeight="Bold" FontSize="18"/>
+
         <Rectangle HorizontalAlignment="Left" Height="4" Margin="62,175,0,0" VerticalAlignment="Top" Width="890" Grid.ColumnSpan="2" Fill="#FFD8D8D8"/>
-        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="462,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" Background="#FFF7F3F3" Height="32" RenderTransformOrigin="0.488,0.47" TextChanged="txtSearch_TextChanged" >
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="462,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303" Background="#FFF7F3F3" Height="20" RenderTransformOrigin="0.488,0.47" TextChanged="txtSearch_TextChanged" >
             <TextBox.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -86,10 +70,89 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
-        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tctmenu" Margin="67,184,0,0">
+            <TabItem Header="Menu" Margin="-2,-2,-35,-15">
+                <Grid Background="White" Height="260">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="300*"/>
+                        <ColumnDefinition Width="90*"/>
+                        <ColumnDefinition Width="177*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView x:Name="lvMenu" HorizontalAlignment="Left" Height="225" VerticalAlignment="Top" Width="703" Margin="-6,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}" MouseDoubleClick="lvMenu_MouseDoubleClick" Grid.ColumnSpan="5">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="3" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                                    <Image Source="{Binding ImageData}" Width="200" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Mon Chinh" Margin="34,-2,-71,-15">
+                <ListView x:Name="lvMenuMonchinh" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="703"  Background="{x:Null}" BorderBrush="{x:Null}" MouseDoubleClick="lvMenuMonChinh_MouseDoubleClick">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="3" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                                <Image Source="{Binding ImageData}" Width="200" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Nuoc" Margin="71,-2,-108,-14">
+                <ListView x:Name="lvMenuNuoc" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="703" Background="{x:Null}" BorderBrush="{x:Null}" MouseDoubleClick="lvMenuNuoc_MouseDoubleClick">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="3" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                                <Image Source="{Binding ImageData}" Width="200" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Trang Mieng" Margin="105,-2,-140,-14">
+                <ListView x:Name="lvMenuTrangMieng" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="703"  Background="{x:Null}" BorderBrush="{x:Null}" MouseDoubleClick="lvMenuTrangMieng_MouseDoubleClick">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="3" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                                <Image Source="{Binding ImageData}" Width="200" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
